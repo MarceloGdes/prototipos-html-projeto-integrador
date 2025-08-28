@@ -1,0 +1,106 @@
+    /* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+    
+:root{
+  --bg-antiflash-white:#f4f6f8;
+  --seasalt:#f9fafb;
+  --oxford-blue: #0B132B;
+  --space-cadet: #1C2541;
+  --true-blue: #4F6D92;
+  --verdigris: #5DC0BF;
+  --black:#333333;
+  --line:#e5e7eb;
+  
+  --muted:#6b7280;
+  --brand:#38b2ac;
+  --sidebar-active:#1e293b;
+  --radius:1px;
+  --shadow:0 4px 18px rgba(2,8,23,.06);
+}
+
+*{
+    box-sizing:border-box
+}
+html,body{
+    height:100%;
+    font-size: 14px;
+}
+body{
+  margin:0;
+  background:var(--bg-antiflash-white);
+  color:var(--black);
+  font-family: "Inter", sans-serif; 
+}
+
+button{
+  border: none;
+}
+
+.app{
+  display:grid; 
+  grid-template-columns: 17em 1fr; 
+  min-height:100vh;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 20
+}
+
+/* Responsive
+@media (max-width: 1040px){
+  .app{grid-template-columns:70px 1fr}
+  .sidebar{padding:16px 8px}
+  .sidebar .brand{display:none}
+  .nav a span{display:none}
+  .grid{grid-template-columns:1fr}
+} */
