@@ -59,10 +59,10 @@
 
     /* Main */
     .main {
-        padding: 0 1em;
+        padding: 1em 1em;
     }
 
-    .header {
+    /* .header {
         margin: 20px 0;
 
         h1 {
@@ -70,7 +70,7 @@
             font-size: 2rem;
             color: var(--oxford-blue);
         }
-    }
+    } */
 
     .grid {
         display: grid;
@@ -127,7 +127,7 @@
         gap: 20px;
 
         .contact-label {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: var(--black);
             font-weight: 500;
             margin-bottom: 10px;
@@ -143,16 +143,12 @@
         }
     }
 
-   
-
     .note {
         font-size: 0.9rem;
-
         color: var(--muted)
     }
 
-    input[type="text"],
-    input[type="email"],
+    input,
     select,
     textarea {
         width: 100%;
@@ -165,8 +161,20 @@
     }
 
     textarea {
-        min-height: 220px;
+        min-height: 200px;
         resize: vertical
+    }
+
+    .input-container{
+        display:flex; 
+        flex-direction:column; 
+        gap:5px;
+
+        label {
+            font-weight: 400;
+            font-size: 1.1rem;
+            margin-top: 10px;
+        }
     }
 
     .note {
@@ -174,10 +182,7 @@
         color: var(--muted)
     }
 
-
-
-
-    /* .cols {
+    .cols {
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 12px
@@ -227,4 +232,4 @@
     .btn.primary {
         background: var(--brand);
         color: #fff
-    } */
+    }
