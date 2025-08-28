@@ -48,14 +48,14 @@ table {
 }
     
 :root{
-  --bg-antiflash-white:#f4f6f8;
-  --seasalt:#f9fafb;
+  --platinium:#EAEAEA;
+  --antiflash-white:#f4f6f8;
   --oxford-blue: #0B132B;
   --space-cadet: #1C2541;
   --true-blue: #4F6D92;
   --verdigris: #5DC0BF;
   --black:#333333;
-  --line:#e5e7eb;
+  --line:#dddee0;
   
   --muted:#6b7280;
   --brand:#38b2ac;
@@ -73,7 +73,7 @@ html,body{
 }
 body{
   margin:0;
-  background:var(--bg-antiflash-white);
+  background:var(--platinium);
   color:var(--black);
   font-family: "Inter", sans-serif; 
 }

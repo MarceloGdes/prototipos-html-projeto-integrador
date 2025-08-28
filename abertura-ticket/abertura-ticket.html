@@ -86,7 +86,7 @@
               <div class="input-container">
                 <label for="motivo">Motivo</label>
                 <select id="motivo">
-                  <option>Selecione o motivo de abertura do ticket.</option>
+                  <option>Emissão de NFSe</option>
                 </select>
               </div>
               <div class="input-container">
@@ -105,15 +105,28 @@
             </div>
 
             <div class="attachments">
-              <div class="section-title" style="margin:0 0 10px 0">Anexos</div>
-              <div class="chips">
-                <span class="chip">📎 print.png</span>
-                <span class="chip">📎 print.png</span>
-                <span class="chip">📎 print.png</span>
-                <span class="chip">📎 print.png</span>
-              </div>
+              <h2>Anexos</h2>
+              <ul class="attached-files">
+                <li class="attached-file">
+                  <span class="material-symbols-outlined">attach_file</span>
+                  <span>print.png</span>
+                </li>
+                <li class="attached-file">
+                  <span class="material-symbols-outlined">attach_file</span>
+                  <span>print.png</span>
+                </li>
+                <li class="attached-file">
+                  <span class="material-symbols-outlined">attach_file</span>
+                  <span>print.png</span>
+                </li>
+              </ul>
+              
               <div class="btn-row">
-                <button class="btn secondary">📎 Anexar Arquivo</button>
+                <label for="file-upload" class="btn secondary">
+                  <span class="material-symbols-outlined">upload</span>
+                  <span>Anexar Arquivo</span>
+                </label>
+                <input id="file-upload" type="file" hidden>
                 <button class="btn primary">Abrir Ticket</button>
               </div>
             </div>

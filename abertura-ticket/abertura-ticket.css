@@ -2,7 +2,7 @@
     .sidebar {
         background: var(--oxford-blue);
         /* Define todos os elementos de texto para a cor determinada */
-        color: var(--seasalt);
+        color: var(--antiflash-white);
         display: flex;
         flex-direction: column;
         padding: 24px 1em;
@@ -33,7 +33,7 @@
         transition: background .2s ease;
 
         span {
-            color: var(--seasalt);
+            color: var(--antiflash-white);
         }
 
     }
@@ -79,7 +79,7 @@
     }
 
     .card {
-        background: var(--seasalt);
+        background: var(--antiflash-white);
         border: 1px solid var(--line);
         border-radius: 10px;
         box-shadow: var(--shadow);
@@ -133,7 +133,7 @@
             margin-bottom: 10px;
         }
         .contact-box {
-            background-color: var(--bg-antiflash-white);
+            background-color: var(--platinium);
             width: 100%;
             padding: 15px 10px;
             border-radius: 10px;
@@ -156,7 +156,7 @@
         border-radius: 10px;
         padding: 12px;
         font: inherit;
-        background: #fff;
+        background: #f9fafb8a;
         color: var(--ink);
     }
 
@@ -191,16 +191,21 @@
     .attachments {
         border-top: 1px solid var(--line);
         padding-top: 16px;
-        margin-top: 12px
+        margin-top: 12px;
+
+        h2 {
+            font-size: 1.1rem;
+        }
     }
 
-    .chips {
+    .attached-files {
         display: flex;
         flex-wrap: wrap;
-        gap: 10px
+        gap: 10px;
+        margin-top: 10px    
     }
 
-    .chip {
+    .attached-file {
         padding: 8px 12px;
         border-radius: 10px;
         border: 1px solid var(--line);
@@ -208,7 +213,11 @@
         font-size: 14px;
         display: flex;
         align-items: center;
-        gap: 6px
+        gap: 6px;
+
+        .material-symbols-outlined {
+            font-size: 1.3rem;
+        }
     }
 
     .btn-row {
@@ -222,11 +231,14 @@
         cursor: pointer;
         font-weight: 600;
         padding: 12px 16px;
-        border-radius: 10px
+        border-radius: 10px;
     }
 
     .btn.secondary {
-        background: #eef2f7;
+        background: var(--platinium);
+        display: flex;
+        align-items: center;
+        gap: 5px;
     }
 
     .btn.primary {
