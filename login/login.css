@@ -1,0 +1,37 @@
+:root {
+  --oxford-blue: #0B132B;
+  --platinium: #EAEAEA;
+  --white: #ffffff;
+  --border-radius: 8px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Inter', sans-serif;
+}
+
+body {
+  background: var(--platinium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.login-card {
+  background: var(--platinium);
+  padding: 2.5rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 18px rgba(2,8,23,.06);
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
