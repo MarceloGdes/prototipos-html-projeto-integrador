@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Novo Ticket</title>
+
+    <!-- Reset CSS -->
+    <!-- CSS -->
+    <link href="../reset.css" rel="stylesheet" />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- CSS -->
+    <link href="../global.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+
+  <body>
+    <div class="app">
+      <aside class="sidebar p-3 d-flex flex-column">
+        <button
+          id="toggleSidebar"
+          class="btn d-flex align-items-center gap-3 mb-4"
+        >
+          <span class="material-symbols-outlined">menu</span>
+          <span class="logo ms-2 fs-2">Deskium</span>
+        </button>
+
+        <nav class="nav d-flex flex-column gap-3 flex-grow-1">
+          <button
+            class="btn d-flex align-items-center gap-3 p-md-2 hover"
+          >
+            <span class="material-symbols-outlined">add_box</span>
+            <span>Novo Ticket</span>
+          </button>
+          <button class="btn active d-flex align-items-center gap-3 p-md-2">
+            <span class="material-symbols-outlined">confirmation_number</span>
+            <span>Tickets Abertos</span>
+          </button>
+          <button class="btn d-flex align-items-center gap-3 p-md-2">
+            <span class="material-symbols-outlined">select_check_box</span>
+            <span>Tickets Resolvidos</span>
+          </button>
+          <button class="btn d-flex align-items-center gap-3 p-md-2">
+            <span class="material-symbols-outlined">archive</span>
+            <span>Tickets Encerrados</span>
+          </button>
+          <button class="btn mt-auto d-flex align-items-center gap-3">
+            <span class="material-symbols-outlined">logout</span>
+            <span>Sair</span>
+          </button>
+        </nav>
+      </aside>
+
+      <main class="main p-4">
+        <!-- Sempre ocupa a maior largura do elemento pai -->
+        <div class="container-fluid">
+          <h2 class="fw-bold mb-4">Tickets Abertos</h2>
+
+          <div class="card p-4">
+            <form>
+              <div class="row g-3">
+                <div class="col-md-2">
+                  <label class="form-label">Número do ticket</label>
+                  <input type="text" class="form-control" placeholder="#0000" />
+                </div>
+
+                <div class="col">
+                  <label class="form-label">Responsável</label>
+                  <select class="form-select">
+                    <option>Selecione..</option>
+                    <option>Marcelo Guedes</option>
+                    <option>Ana Paula</option>
+                  </select>
+                </div>
+
+                <div class="col">
+                  <label class="form-label">Sub-Status</label>
+                  <select class="form-select">
+                    <option>Selecione..</option>
+                    <option>Aguardando meu retorno</option>
+                    <option>Em análise</option>
+                  </select>
+                </div>
+
+                <div class="col">
+                  <label class="form-label">Motivo</label>
+                  <select class="form-select">
+                    <option>Selecione..</option>
+                    <option>Emissão de NFSe</option>
+                    <option>Erro no sistema</option>
+                  </select>
+                </div>
+
+                <div class="col">
+                  <label class="form-label">Categoria</label>
+                  <select class="form-select">
+                    <option>Selecione</option>
+                    <option>Dúvida</option>
+                    <option>Suporte</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="d-flex gap-2 mt-3 mb-4">
+                <button class="btn btn-primary">Filtrar</button>
+                <button class="btn btn-secondary">
+                  Limpar Filtros
+                </button>
+              </div>
+            </form>
+            <div class="table-responsive">
+              <table class="table align-middle">
+                <thead>
+                  <tr>
+                    <th scope="col" class="fw-medium">Ticket</th>
+                    <th scope="col" class="fw-medium">Título</th>
+                    <th scope="col" class="fw-medium">Sub-Status</th>
+                    <th scope="col" class="fw-medium">Motivo</th>
+                    <th scope="col" class="fw-medium">Categoria</th>
+                    <th scope="col" class="fw-medium">Responsável</th>
+                    <th scope="col" class="fw-medium">Data de Abertura</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>
+                        <a href="">
+                            #10015
+                        </a> 
+                    </td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td class="td-substatus">
+                        <span class="p-1 warning">
+                            Aguardado meu retorno
+                        </span>
+                    </td>
+                    <td>Emissão de NFSe</td>
+                    <td>Dúvida</td>
+                    <td>Marcelo Guedes</td>
+                    <td>30/08/2025</td>
+                  </tr>
+                  <tr>
+                    <td>
+                        <a href="">
+                             #10016
+                        </a>
+                    </td>
+                    <td>Lorem ipsum dolor sit amet</td>
+                    <td class="td-substatus">
+                        <span class="p-1 normal">
+                            Em atedimento
+                        </span>
+                    </td>
+                    <td>Envio de e-mail</td>
+                    <td>Erro do sistema</td>
+                    <td>Ana Paula</td>
+                    <td>30/08/2025</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document
+        .getElementById("toggleSidebar")
+        .addEventListener("click", function () {
+          document.querySelector(".sidebar").classList.toggle("collapsed");
+          document.querySelector(".app").classList.toggle("sidebar-collapsed");
+        });
+    </script>
+  </body>
+</html>

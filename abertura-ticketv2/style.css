@@ -1,0 +1,92 @@
+/* Sidebar */
+.sidebar {
+    background: var(--oxford-blue);
+    color: var(--antiflash-white);
+}
+
+.sidebar .logo {
+    font-weight: 800;
+    font-family: "Funnel Display", sans-serif;
+}
+
+.sidebar .btn {
+    text-align: left;
+    color: var(--antiflash-white);
+    border: none;
+}
+.sidebar .btn:hover {
+    background: #1c2541
+}
+
+.sidebar .btn.active {
+    background-color: var(--space-cadet);
+}
+
+/* Estado colapsado da sidebar */
+.sidebar.collapsed {
+    width: 70px;
+    transition: width 0.3s;
+    padding: 1rem 0.5rem !important;
+
+    .btn {
+        align-self: center;
+    }
+}
+
+.sidebar.collapsed .logo {
+    display: none;
+}
+
+.sidebar.collapsed .btn span:last-child {
+    display: none;
+}
+
+.app {
+    grid-template-columns: 17em 1fr;
+    transition: grid-template-columns 0.3s;
+}
+
+.app.sidebar-collapsed {
+    grid-template-columns: 70px 1fr;
+}
+
+/* Cards */
+.card {
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--antiflash-white);
+    box-shadow: var(--shadow);
+    min-height: 95vh;
+}
+
+.icon {
+    font-size: 40px;
+    display: block;
+    text-align: center;
+}
+
+.requester {
+    text-align: center;
+}
+
+.note {
+    font-size: 0.85rem;
+    color: var(--muted);
+}
+
+.attachments {
+    li :hover {
+        background-color: rgb(255, 62, 62);
+    }
+}
+
+.btn-primary {
+    background: var(--verdigris);
+    border: none;
+}
+
+.btn-secondary {
+    background: var(--platinium);
+    border: none;
+    color: var(--black);
+}

@@ -1,5 +1,6 @@
 /* Sidebar */
 .sidebar {
+    position: static;
     background: var(--oxford-blue);
     color: var(--antiflash-white);
 }
@@ -50,42 +51,50 @@
     grid-template-columns: 70px 1fr;
 }
 
-/* Cards */
 .card {
-    border-radius: 10px;
-    border: 1px solid var(--line);
-    background: var(--antiflash-white);
+    border-radius: var(--card-border-radius);
+    min-height: 85vh;
+}
+
+h2 {
+    color: var(--oxford-blue);
+}
+
+.card {
+    background-color: var(--antiflash-white);
+    border: none;
     box-shadow: var(--shadow);
 }
 
-.icon {
-    font-size: 40px;
-    display: block;
-    text-align: center;
+table, tbody, th, td {
+    background-color: var(--antiflash-white) !important;
 }
 
-.requester {
-    text-align: center;
-}
-
-.note {
-    font-size: 0.85rem;
-    color: var(--muted);
-}
-
-.attachments {
-    li :hover {
-        background-color: rgb(255, 62, 62);
-    }
+table, tbody, td {
+    height: 4rem;
+    vertical-align: middle; 
 }
 
 .btn-primary {
-    background: var(--verdigris);
-    border: none;
+    background-color: var(--verdigris);
+    border: var(--verdigris);
 }
 
-.btn-secondary {
-    background: var(--platinium);
-    border: none;
-    color: var(--black);
+
+.td-substatus {
+    span {
+        border-radius: 10px;
+        padding: 0.2rem;
+    }
+
+    .warning {
+        background-color: rgba(252, 109, 109, 0.466) !important;
+        color: rgb(117, 0, 0);
+        
+    }
+
+    .normal {
+        background-color: rgba(15, 192, 15, 0.445) !important;
+        color: rgb(0, 63, 0);
+    }
 }
