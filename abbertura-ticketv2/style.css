@@ -55,7 +55,7 @@
     border-radius: 10px;
     border: 1px solid var(--line);
     background: var(--antiflash-white);
-    box-shadow: 0 4px 18px rgba(2, 8, 23, 0.06);
+    box-shadow: var(--shadow);
 }
 
 .icon {

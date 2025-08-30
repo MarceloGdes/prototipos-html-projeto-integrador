@@ -3,25 +3,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login - Deskium.AI</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <title>Login - Deskium</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Material Icons -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined"
+    />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../reset.css" />
+    <link rel="stylesheet" href="../global.css" />
     <link rel="stylesheet" href="login.css" />
   </head>
   <body>
-    <div class="login-card">
-        <div class="title-container">
-            <span class="logo">Deskium</span>
-            <span class="login-title">Login</span>
+    <div class="login-card rounded-4 h-auto">
+      <h1 class="mb-5 fs-1 fw">Deskium</h1>
+      <form>
+        <div class="mb-3 input-group">
+          <span class="input-group-text border-end-0">
+            <span class="material-symbols-outlined">
+              mail</span>
+          </span>
+          <input
+            type="email"
+            class="form-control"
+            id="email"
+            placeholder="E-mail"
+          />
         </div>
-        <div class="inputs">
-            <input type="email" placeholder="E-mail">
-            <input type="password" placeholder="Senha">
-            <button>Login</button>
-        </div>        
+        <div class="mb-4 input-group">
+          <span class="input-group-text border-end-0">
+            <span class="material-symbols-outlined">
+              lock
+            </span>
+          </span>
+          <input
+            type="password"
+            class="form-control"
+            id="senha"
+            placeholder="Senha"
+          />
+        </div>
+        <button type="submit" class="btn btn-login">Entrar</button>
+      </form>
     </div>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"
+    ></script>
   </body>
 </html>
