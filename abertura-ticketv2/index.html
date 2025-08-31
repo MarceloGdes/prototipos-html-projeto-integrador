@@ -6,7 +6,6 @@
     <title>Novo Ticket</title>
 
     <!-- Reset CSS -->
-    <!-- CSS -->
     <link href="../reset.css" rel="stylesheet" />
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,171 +30,188 @@
   </head>
 
   <body>
-    <div class="app">
-      <!-- Sidebar -->
-      <aside class="sidebar p-3 d-flex flex-column">
+    <!-- Nav superior -->
+    <nav class="navbar shadow-sm">
+      <div class="container-fluid justify-content-start">
         <button
-          id="toggleSidebar"
-          class="btn d-flex align-items-center gap-3 mb-4"
+          class="btn d-flex align-items-center gap-2"
+          type="button"
+          data-bs-toggle="offcanvas"
+          data-bs-target="#sidebarMenu"
+          aria-controls="sidebarMenu"
         >
-          <span class="material-symbols-outlined">menu</span>
-          <span class="logo ms-2 fs-2">Deskium</span>
+          <span class="material-symbols-outlined menu-icon">menu</span>
+          <span class="fw-bold logo fs-4">Deskium</span>
         </button>
+        <ul class="nav nav-pills" id="pills-tab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button
+              class="nav-link active"
+              id="pills-tickets-abertos-tab"
+              data-bs-toggle="pill"
+              data-bs-target="#pills-tickets-abertos"
+              type="button"
+              role="tab"
+              aria-controls="pills-tickets-abertos"
+              aria-selected="true"
+            >
+              Novo ticket
+            </button>
+          </li>
+        </ul>
+      </div>
+    </nav>
 
-        <nav class="nav d-flex flex-column gap-3 flex-grow-1">
-          <button class="btn active d-flex align-items-center gap-3 p-md-2 hover">
-            <span class="material-symbols-outlined">add_box</span>
-            <span>Novo Ticket</span>
-          </button>
-          <button class="btn d-flex align-items-center gap-3 p-md-2">
-            <span class="material-symbols-outlined">confirmation_number</span>
-            <span>Tickets Abertos</span>
-          </button>
-          <button class="btn d-flex align-items-center gap-3 p-md-2">
-            <span class="material-symbols-outlined">select_check_box</span>
-            <span>Tickets Resolvidos</span>
-          </button>
-          <button class="btn d-flex align-items-center gap-3 p-md-2">
-            <span class="material-symbols-outlined">archive</span>
-            <span>Tickets Encerrados</span>
-          </button>
-          <button class="btn mt-auto d-flex align-items-center gap-3">
-            <span class="material-symbols-outlined">logout</span>
-            <span>Sair</span>
-          </button>
-        </nav>
-      </aside>
+    <!-- Nav dinamica lateral -->
+    <div
+      class="offcanvas offcanvas-start p-3 d-flex flex-column w-25"
+      tabindex="-1"
+      id="sidebarMenu"
+    >
+      <div class="d-flex align-items-center mb-4">
+        <span class="logo mt-3">Deskium</span>
+      </div>
 
-      <!-- Main -->
-      <main class="main p-3">
-        <div class="row g-3">
-          <!-- Card Solicitante -->
-          <div class="col-md-4">
-            <div class="card p-3">
-              <h2 class="fw-semibold fs-5 mb-4">Solicitante</h2>
-              <span class="material-symbols-outlined icon">person</span>
-              <div class="requester mb-3">
-                <p class="name fw-semibold fs-6 mb-0">Marcelo Guedes</p>
-                <p class="company">Empresa X LTDA</p>
+      <nav class="nav d-flex flex-column gap-3 flex-grow-1">
+        <button class="btn d-flex align-items-center gap-2">
+          <span class="material-symbols-outlined">add_box</span>
+          <span>Novo Ticket</span>
+        </button>
+        <button class="btn active d-flex align-items-center gap-2">
+          <span class="material-symbols-outlined">confirmation_number</span>
+          <span>Tickets Abertos</span>
+        </button>
+        <button class="btn d-flex align-items-center gap-2">
+          <span class="material-symbols-outlined">select_check_box</span>
+          <span>Tickets Resolvidos</span>
+        </button>
+        <button class="btn d-flex align-items-center gap-2">
+          <span class="material-symbols-outlined">archive</span>
+          <span>Tickets Encerrados</span>
+        </button>
+        <button class="btn mt-auto d-flex align-items-center gap-2">
+          <span class="material-symbols-outlined">logout</span>
+          <span>Sair</span>
+        </button>
+      </nav>
+    </div>
+    <!-- Main -->
+    <main class="main p-3 container-xxl">
+      <div class="row g-3">
+        <!-- Card Solicitante -->
+        <div class="col-md-4">
+          <div class="card p-3">
+            <h2 class="fw-semibold fs-5 mb-4">Solicitante</h2>
+            <span class="material-symbols-outlined icon">person</span>
+            <div class="requester mb-3">
+              <p class="name fw-semibold fs-6 mb-0">Marcelo Guedes</p>
+              <p class="company">Empresa X LTDA</p>
+            </div>
+
+            <div class="mb-3">
+              <p class="fw-semibold mb-1">E-mail</p>
+              <div class="p-2 rounded border">
+                marcelo.guedes@empresax.com.br
               </div>
-
-              <div class="mb-3">
-                <p class="fw-semibold mb-1">E-mail</p>
-                <div class="p-2 rounded border">
-                  marcelo.guedes@empresax.com.br
-                </div>
-                <div class="note">
-                  Você irá receber atualizações do ticket nesse e-mail.
-                </div>
-              </div>
-
-              <div>
-                <p class="fw-semibold mb-1">Telefones</p>
-                <div class="p-2 rounded border mb-2">
-                    45 3252-7089
-                </div>
-                <div class="p-2 rounded border mb-2">
-                  45 9 9901-7870
-                </div>
-                <div class="note">
-                  O analista responsável poderá entrar em contato com você por
-                  este(s) número(s).
-                </div>
+              <div class="note">
+                Você irá receber atualizações do ticket nesse e-mail.
               </div>
             </div>
-          </div>
 
-          <!-- Card Ticket -->
-          <div class="col-md-8">
-            <div class="card p-3">
-              <h2 class="fw-semibold fs-5 mb-4">Dados do Ticket</h2>
-
-              <div class="row g-3 mb-3">
-                <div class="col-md-6">
-                  <label for="motivo" class="form-label mb-1">Motivo</label>
-                  <select id="motivo" class="form-select">
-                    <option>Emissão de NFSe</option>
-                  </select>
-                </div>
-                <div class="col-md-6">
-                  <label for="categoria" class="form-label mb-1">Categoria</label>
-                  <select id="categoria" class="form-select">
-                    <option>Selecione a categoria do ticket.</option>
-                  </select>
-                </div>
-              </div>
-
-              <div class="mb-3">
-                <label for="titulo" class="form-label mb1">Título</label>
-                <input
-                  id="titulo"
-                  type="text"
-                  class="form-control"
-                  placeholder="Preencha o título do seu ticket."
-                />
-              </div>
-
-              <div class="mb-3">
-                <label for="descricao" class="form-label mb-1"
-                  >Descrição do ticket</label
-                >
-                <textarea
-                  id="descricao"
-                  class="form-control"
-                  placeholder="Descreva o que está ocorrendo ou o que você precisa. Lembre-se de quanto mais informações, melhor. :)"
-                  rows="9"
-                ></textarea>
-              </div>
-
-              <div class="border-top pt-3">
-                <h5 class="fs-5">Anexos</h5>
-                <ul class="list-unstyled d-flex flex-wrap gap-2 mt-2 attachments">
-                  <li
-                    class="border rounded p-2 d-flex align-items-center gap-2 bg-light"
-                  >
-                    <span class="material-symbols-outlined fs-5">draft</span>
-                    print.png
-                  </li>
-                  <li
-                    class="border rounded p-2 d-flex align-items-center gap-2 bg-light"
-                  >
-                    <span class="material-symbols-outlined fs-5">draft</span>
-                    print.png
-                  </li>
-                  <li
-                    class="border rounded p-2 d-flex align-items-center gap-2 bg-light"
-                  >
-                    <span class="material-symbols-outlined fs-5">draft</span>
-                    print.png
-                  </li>
-                </ul>
-
-                <div class="d-flex justify-content-between mt-3">
-                  <label
-                    for="file-upload"
-                    class="btn btn-secondary d-flex align-items-center gap-2"
-                  >
-                    <span class="material-symbols-outlined">upload</span>
-                    Anexar Arquivo
-                  </label>
-                  <input id="file-upload" type="file" hidden />
-                  <button class="btn btn-primary">Abrir Ticket</button>
-                </div>
+            <div>
+              <p class="fw-semibold mb-1">Telefones</p>
+              <div class="p-2 rounded border mb-2">45 3252-7089</div>
+              <div class="p-2 rounded border mb-2">45 9 9901-7870</div>
+              <div class="note">
+                O analista responsável poderá entrar em contato com você por
+                este(s) número(s).
               </div>
             </div>
           </div>
         </div>
-      </main>
-    </div>
+
+        <!-- Card Ticket -->
+        <div class="col-md-8">
+          <div class="card p-3">
+            <h2 class="fw-semibold fs-5 mb-4">Dados do Ticket</h2>
+
+            <div class="row g-3 mb-3">
+              <div class="col-md-6">
+                <label for="motivo" class="form-label mb-1">Motivo</label>
+                <select id="motivo" class="form-select">
+                  <option>Emissão de NFSe</option>
+                </select>
+              </div>
+              <div class="col-md-6">
+                <label for="categoria" class="form-label mb-1">Categoria</label>
+                <select id="categoria" class="form-select">
+                  <option>Selecione a categoria do ticket.</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <label for="titulo" class="form-label mb1">Título</label>
+              <input
+                id="titulo"
+                type="text"
+                class="form-control"
+                placeholder="Preencha o título do seu ticket."
+              />
+            </div>
+
+            <div class="mb-3">
+              <label for="descricao" class="form-label mb-1"
+                >Descrição do ticket</label
+              >
+              <textarea
+                id="descricao"
+                class="form-control"
+                placeholder="Descreva o que está ocorrendo ou o que você precisa. Lembre-se de quanto mais informações, melhor. :)"
+                rows="7"
+              ></textarea>
+            </div>
+
+            <div class="border-top pt-3">
+              <h5 class="fs-5">Anexos</h5>
+              <ul class="list-unstyled d-flex flex-wrap gap-2 mt-2 attachments">
+                <li
+                  class="border rounded p-2 d-flex align-items-center gap-2 bg-light"
+                >
+                  <span class="material-symbols-outlined fs-5">draft</span>
+                  print.png
+                </li>
+                <li
+                  class="border rounded p-2 d-flex align-items-center gap-2 bg-light"
+                >
+                  <span class="material-symbols-outlined fs-5">draft</span>
+                  print.png
+                </li>
+                <li
+                  class="border rounded p-2 d-flex align-items-center gap-2 bg-light"
+                >
+                  <span class="material-symbols-outlined fs-5">draft</span>
+                  print.png
+                </li>
+              </ul>
+
+              <div class="d-flex justify-content-between mt-3">
+                <label
+                  for="file-upload"
+                  class="btn btn-secondary d-flex align-items-center gap-2"
+                >
+                  <span class="material-symbols-outlined">upload</span>
+                  Anexar Arquivo
+                </label>
+                <input id="file-upload" type="file" hidden />
+                <button class="btn btn-primary">Abrir Ticket</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script>
-      document
-        .getElementById("toggleSidebar")
-        .addEventListener("click", function () {
-          document.querySelector(".sidebar").classList.toggle("collapsed");
-          document.querySelector(".app").classList.toggle("sidebar-collapsed");
-        });
-    </script>
   </body>
 </html>

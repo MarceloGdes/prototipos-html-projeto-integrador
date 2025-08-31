@@ -1,35 +1,11 @@
-
-.navbar {
-    background-color: var(--space-cadet);
-}
-
-.material-symbols-outlined {
+/* Sidebar custom */
+.offcanvas {
+    background: var(--oxford-blue);
     color: var(--antiflash-white);
 }
 
 .logo {
     font-family: "Funnel Display", sans-serif;
-    color: var(--antiflash-white);
-}
-
-.nav-link.active {
-    background-color: var(--oxford-blue) !important;
-    color: var(--antiflash-white);
-}
-
-.nav-link {
-    color: var(--antiflash-white);
-}
-
-.nav-link:hover {
-    color: var(--verdigris);
-}
-
-
-/* Sidebar */
-.offcanvas {
-    background: var(--oxford-blue);
-    color: var(--antiflash-white);
 }
 
 .offcanvas .logo {
@@ -54,7 +30,11 @@
 
 .card {
     border-radius: var(--card-border-radius);
-    min-height: 80vh;
+    min-height: 79vh;
+}
+
+h2 {
+    color: var(--oxford-blue);
 }
 
 .card {

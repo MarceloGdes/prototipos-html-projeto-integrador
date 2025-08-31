@@ -6,12 +6,12 @@
   --oxford-blue: #0B132B;
   --space-cadet: #1C2541;
   --true-blue: #4F6D92;
-  --verdigris: #5DC0BF;
+  --verdigris: #3d74a7;
   --black:#333333;
   --line:#dddee0;
   --muted:#6b7280;
   --shadow:0 4px 18px rgba(2, 8, 23, 0.06);
-  --card-border-radius: 10px
+  --card-border-radius: 10px;
 }
 
 *{
@@ -32,12 +32,6 @@ button{
 }
 input, select {
     background-color: rgba(255, 255, 255, 0.527) !important;
-}
-
-.app{
-  display:grid; 
-  grid-template-columns: 17em 1fr; 
-  min-height:100vh;
 }
 
 .material-symbols-outlined {
