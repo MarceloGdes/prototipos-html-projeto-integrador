@@ -1,11 +1,40 @@
-/* Sidebar custom */
-.offcanvas {
-    background: var(--oxford-blue);
+
+.navbar {
+    background-color: var(--space-cadet);
+}
+
+.material-symbols-outlined {
     color: var(--antiflash-white);
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 200,
+        'GRAD' 0,
+        'opsz' 24;
 }
 
 .logo {
     font-family: "Funnel Display", sans-serif;
+    color: var(--antiflash-white);
+}
+
+.nav-link.active {
+    background-color: var(--oxford-blue) !important;
+    color: var(--antiflash-white);
+}
+
+.nav-link {
+    color: var(--antiflash-white);
+}
+
+.nav-link:hover {
+    color: var(--verdigris);
+}
+
+
+/* Sidebar */
+.offcanvas {
+    background: var(--oxford-blue);
+    color: var(--antiflash-white);
 }
 
 .offcanvas .logo {
@@ -28,36 +57,37 @@
     background: var(--space-cadet);
 }
 
+/* Cards */
 .card {
-    border-radius: var(--card-border-radius);
-    min-height: 79vh;
-}
-
-h2 {
-    color: var(--oxford-blue);
-}
-
-.card {
-    background-color: var(--antiflash-white);
-    border: none;
+    border-radius: 10px;
+    border: 1px solid var(--line);
+    background: var(--antiflash-white);
     box-shadow: var(--shadow);
+    height: 100%;
+    min-height: 85vh;
 }
 
-table,
-tbody,
-th,
-td {
-    background-color: var(--antiflash-white) !important;
+.ticket-info-value {
+    background-color: #eaeaea88;
 }
 
-table,
-tbody,
-td {
-    height: 3.7rem;
-    vertical-align: middle;
+.attachments {
+    li :hover {
+        background-color: rgb(255, 62, 62);
+    }
+}
+
+label[for="file-upload"]{
+    height: fit-content;
 }
 
 .btn-primary {
-    background-color: var(--verdigris);
-    border: var(--verdigris);
+    background: var(--verdigris);
+    border: none;
+}
+
+.btn-secondary {
+    background: var(--platinium);
+    border: none;
+    color: var(--black);
 }

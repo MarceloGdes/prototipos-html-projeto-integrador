@@ -5,6 +5,11 @@
 
 .material-symbols-outlined {
     color: var(--antiflash-white);
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 200,
+        'GRAD' 0,
+        'opsz' 24;
 }
 
 .logo {
@@ -54,12 +59,8 @@
 
 .card {
     border-radius: var(--card-border-radius);
-    min-height: 80vh;
-}
-
-.card {
+    min-height: 82vh;
     background-color: var(--antiflash-white);
-    border: none;
     box-shadow: var(--shadow);
 }
 
