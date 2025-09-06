@@ -3,13 +3,8 @@
     background-color: var(--space-cadet);
 }
 
-.material-symbols-outlined {
+.menu-icon {
     color: var(--antiflash-white);
-    font-variation-settings:
-        'FILL' 0,
-        'wght' 200,
-        'GRAD' 0,
-        'opsz' 24;
 }
 
 .logo {
@@ -28,6 +23,10 @@
 
 .nav-link:hover {
     color: var(--verdigris);
+}
+
+.btn-close {
+    font-size: 0.6em;
 }
 
 
@@ -57,11 +56,14 @@
     background: var(--space-cadet);
 }
 
-.card {
-    border-radius: var(--card-border-radius);
-    min-height: 82vh;
-    background-color: var(--antiflash-white);
+/* Cards */
+.card-requester, .card-actions, .card-tickets-list {
+    border: 1px solid var(--line);
+    background: var(--antiflash-white);
     box-shadow: var(--shadow);
+    height: calc(100vh - 70px);
+    overflow: auto;
+    
 }
 
 table,
@@ -76,6 +78,16 @@ tbody,
 td {
     height: 3.7rem;
     vertical-align: middle;
+}
+
+.card-header-support {
+    background-color: #1c2541;
+    color: var(--antiflash-white);
+}
+
+.card-header-requester {
+    background-color: #3d74a7;
+    color: var(--antiflash-white);
 }
 
 .btn-primary {

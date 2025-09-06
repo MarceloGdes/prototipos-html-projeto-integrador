@@ -57,12 +57,11 @@
 
 /* Cards */
 .card {
-    border-radius: 10px;
     border: 1px solid var(--line);
     background: var(--antiflash-white);
     box-shadow: var(--shadow);
-    height: 100%;
-    min-height: 80vh;
+    height: calc(100vh - 70px);
+    overflow: auto;
 }
 
 .icon {
@@ -73,6 +72,10 @@
 
 .requester {
     text-align: center;
+}
+
+.ticket-info-value {
+    background-color: #eaeaea88;
 }
 
 .note {

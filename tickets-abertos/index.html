@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tickets Abertos</title>
+    <title>Tickets Fechados</title>
 
     <!-- Google Fonts -->
     <link
@@ -38,13 +38,13 @@
           data-bs-target="#sidebarMenu"
           aria-controls="sidebarMenu"
         >
-          <span class="material-symbols-outlined">menu</span>
+          <span class="material-symbols-outlined menu-icon ">menu</span>
           <span class="fw-bold logo fs-4">Deskium</span>
         </button>
         <ul class="nav nav-pills" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
             <button
-              class="nav-link active"
+              class="nav-link"
               id="pills-tickets-abertos-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-tickets-abertos"
@@ -56,33 +56,43 @@
               Tickets Abertos
             </button>
           </li>
-          <li class="nav-item" role="presentation">
+          <li class="nav-item position-relative" role="presentation">
             <button
-              class="nav-link"
-              id="pills-profile-tab"
+              class="nav-link active pe-4"
+              id="pills-tk10015-tab"
               data-bs-toggle="pill"
-              data-bs-target="#pills-profile"
+              data-bs-target="#pills-tk10015"
               type="button"
               role="tab"
-              aria-controls="pills-profile"
-              aria-selected="false"
+              aria-controls="pills-tk10015"
+              aria-selected="true"
             >
               #10015
             </button>
-          </li>
-          <li class="nav-item" role="presentation">
             <button
-              class="nav-link"
-              id="pills-contact-tab"
+              type="button"
+              class="btn-close btn-close-white position-absolute top-0 end-0 me-1 mt-1 p-1"
+              aria-label="Close"
+            ></button>
+          </li>
+          <li class="nav-item position-relative" role="presentation">
+            <button
+              class="nav-link pe-4"
+              id="pills-tk10016-tab"
               data-bs-toggle="pill"
-              data-bs-target="#pills-contact"
+              data-bs-target="#pills-tk10016"
               type="button"
               role="tab"
-              aria-controls="pills-contact"
+              aria-controls="pills-tk10016"
               aria-selected="false"
             >
               #10016
             </button>
+             <button
+              type="button"
+              class="btn-close btn-close-white position-absolute top-0 end-0 me-1 mt-1 p-1"
+              aria-label="Close"
+            ></button>
           </li>
         </ul>
       </div>
@@ -119,18 +129,18 @@
     </div>
 
     <!-- Conteúdo principal -->
-    <main class="main p-4">
+    <main class="main pt-2">
       <!-- Sempre ocupa a maior largura do elemento pai -->
       <div class="container-fluid">
         <div class="tab-content" id="pills-tabContent">
           <div
-            class="tab-pane fade show active"
+            class="tab-pane fade"
             id="pills-tickets-abertos"
             role="tabpanel"
             aria-labelledby="pills-tickets-abertos-tab"
             tabindex="0"
           >
-            <div class="card border-0 p-4">
+            <div class="card border-0 p-4 card-tickets-list">
               <form class="mb-3">
                 <div class="row g-3">
                   <div class="col-md-2">
@@ -180,23 +190,15 @@
                 </div>
 
                 <div class="d-flex gap-2 mt-3 mb-4 flex-grow">
-                  <button
-                    class="btn btn-primary d-flex justify-content-center align-items-center gap-1"
-                  >
+                  <button class="btn btn-primary d-flex justify-content-center align-items-center gap-1">
                     <span class="material-symbols-outlined fs-5">search</span>
                     <span>Filtrar</span>
                   </button>
-                  <button
-                    class="btn btn-secondary d-flex justify-content-center align-items-center gap-1"
-                  >
-                    <span class="material-symbols-outlined fs-5"
-                      >ink_eraser</span
-                    >
+                  <button class="btn btn-secondary d-flex justify-content-center align-items-center gap-1">
+                    <span class="material-symbols-outlined fs-5">ink_eraser</span>
                     <span>Limpar Filtros</span>
                   </button>
-                  <button
-                    class="btn btn-success d-flex justify-content-center align-items-center gap-1 ms-auto"
-                  >
+                  <button class="btn btn-success d-flex justify-content-center align-items-center gap-1 ms-auto">
                     <span class="material-symbols-outlined fs-5">add_box</span>
                     <span>Novo Ticket</span>
                   </button>
@@ -250,155 +252,206 @@
               </div>
             </div>
           </div>
+
           <div
-            class="tab-pane fade"
-            id="pills-profile"
+            class="tab-pane fade show active"
+            id="pills-tk10015"
             role="tabpanel"
-            aria-labelledby="pills-profile-tab"
+            aria-labelledby="pills-tk10015-tab"
             tabindex="0"
           >
             <div class="row g-3">
               <!-- Card Solicitante -->
-              <div class="col-md-4">
-                <div class="card p-3">
-                  <h2 class="fw-semibold fs-5 mb-4">Solicitante</h2>
-                  <span class="material-symbols-outlined icon">person</span>
-                  <div class="requester mb-3">
-                    <p class="name fw-semibold fs-6 mb-0">Marcelo Guedes</p>
-                    <p class="company">Empresa X LTDA</p>
+              <div class="col-md-3">
+                <div class="card p-3 card-requester">
+                  <div class="border-bottom mt-2 mb-3">
+                    <h2 class="fw-semibold fs-5">
+                      Ticket
+                      <span class="fw-bold" id="ticket-id">#10015</span>
+                    </h2>
+                    <h3 class="fw-medium fs-6">
+                      Problema ao gerar o faturamento dos clientes.
+                    </h3>
                   </div>
 
-                  <div class="mb-3">
-                    <p class="fw-semibold mb-1">E-mail</p>
-                    <div class="p-2 rounded border">
-                      marcelo.guedes@empresax.com.br
-                    </div>
-                    <div class="note">
-                      Você irá receber atualizações do ticket nesse e-mail.
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-1"
+                  >
+                    <p class="fw-medium mb-0">Data de Abertura:</p>
+                    <span class="">30/08/2025</span>
+                  </div>
+
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-4"
+                  >
+                    <p class="fw-medium mb-0">Data de Fechamento:</p>
+                    <span class="">06/09/2025</span>
+                  </div>
+
+                  <div class="mb-2">
+                    <p class="fw-normal mb-0 fw-medium">Analista responsável</p>
+                    <div class="p-2 rounded border ticket-info-value mb-2">
+                      Marcelo Guedes
                     </div>
                   </div>
 
-                  <div>
-                    <p class="fw-semibold mb-1">Telefones</p>
-                    <div class="p-2 rounded border mb-2">45 3252-7089</div>
-                    <div class="p-2 rounded border mb-2">45 9 9901-7870</div>
-                    <div class="note">
-                      O analista responsável poderá entrar em contato com você
-                      por este(s) número(s).
+                  <div class="mb-2">
+                    <p class="fw-normal mb-0 fw-medium">Motivo</p>
+                    <div class="p-2 rounded border ticket-info-value mb-2">
+                      Emissão de NFS-e
+                    </div>
+                  </div>
+
+                  <div class="mb-2">
+                    <p class="fw-normal mb-0 fw-medium">Categoria</p>
+                    <div class="p-2 rounded border ticket-info-value mb-2">
+                      Dúvida
+                    </div>
+                  </div>
+
+                  <div class="mb-2">
+                    <p class="fw-normal mb-0 fw-medium">Sub-Status</p>
+                    <div class="p-2 rounded border ticket-info-value mb-2">
+                      Resolvido
                     </div>
                   </div>
                 </div>
               </div>
 
               <!-- Card Ticket -->
-              <div class="col-md-8">
-                <div class="card p-3">
-                  <h2 class="fw-semibold fs-5 mb-4">Dados do Ticket</h2>
-
-                  <div class="row g-3 mb-3">
-                    <div class="col-md-6">
-                      <label for="motivo" class="form-label mb-1">Motivo</label>
-                      <select id="motivo" class="form-select">
-                        <option>Emissão de NFSe</option>
-                      </select>
+              <div class="col-md-9">
+                <div class="card p-3 card-actions">
+                  <div class="alert alert-secondary" role="alert">
+                    Esse ticket está fechado e não pode ser alterado.
+                  </div>
+                  <div class="card mb-3">
+                    <div class="card-header d-flex justify-content-between card-header-support">
+                      <span class="fw-medium">Marcelo Guedes <span>em 06/09/2025 às 13:20</span></span>
+                      <span class="fw-medium">Ação 04</span>
                     </div>
-                    <div class="col-md-6">
-                      <label for="categoria" class="form-label mb-1"
-                        >Categoria</label
-                      >
-                      <select id="categoria" class="form-select">
-                        <option>Selecione a categoria do ticket.</option>
-                      </select>
+                    <div class="card-body">
+                      <p class="card-text">
+                        Bom dia, Marcia!
+                        <br>
+                        <br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel sapien ac metus finibus tincidunt. Vivamus a diam nec ipsum facilisis tempus. Suspendisse at semper justo, vitae ultricies arcu.
+                        <br>
+                        <br>
+                        Integer ut felis non libero dictum fermentum. Proin at nunc in neque laoreet sodales. Aenean ac lacus vel lectus suscipit porta. Donec consequat, mauris eget porttitor elementum, neque massa porta lorem, a ultrices sapien ligula nec orci.
+                        <br>
+                        <br>
+                        Curabitur vel efficitur elit. In ut mi ut mauris eleifend porttitor non id purus. Quisque pharetra sem sed risus vulputate, ut tincidunt nibh ultricies. Vestibulum sodales sapien non augue consequat, sit amet interdum magna malesuada.
+                        <br>
+                        <br>
+                        Sed euismod, magna nec aliquam euismod, nunc velit sollicitudin ex, vel interdum felis risus vitae ex.
+                        <br>
+                        <br>
+                        Atenciosamente,
+                        <br>
+                        Marcelo Guedes
+                      </p>
+                    </div>
+                    <div class="card-footer">
+                      <ul class="list-unstyled d-flex gap-2 c mt-2 mb-2 attachments">
+                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
+                          <div class="d-flex align-items-center">
+                            <span class="material-symbols-outlined fs-5 w-100">draft</span>
+                            <span>print.png</span>
+                          </div>
+
+                        </li>
+                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
+                          <span class="material-symbols-outlined fs-5">draft</span>
+                          print.png
+                        </li>
+                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
+                          <span class="material-symbols-outlined fs-5">draft</span>
+                          print.png
+                        </li>
+                      </ul>
                     </div>
                   </div>
-
-                  <div class="mb-3">
-                    <label for="titulo" class="form-label mb1">Título</label>
-                    <input
-                      id="titulo"
-                      type="text"
-                      class="form-control"
-                      placeholder="Preencha o título do seu ticket."
-                    />
+                  <div class="card mb-3">
+                    <div class="card-header d-flex justify-content-between card-header-requester">
+                      <span class="fw-medium">Marcia Silva (Você) <span>em 06/09/2025 às 12:00</span></span>
+                      <span class="fw-medium">Ação 03</span>
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        Bom dia, Marcelo. Estou bem também!
+                        <br>
+                        <br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel sapien ac metus finibus tincidunt. Vivamus a diam nec ipsum facilisis tempus. Suspendisse at semper justo, vitae ultricies arcu.
+                        <br>
+                        <br>
+                        Integer ut felis non libero dictum fermentum. Proin at nunc in neque laoreet sodales. Aenean ac lacus vel lectus suscipit porta. Donec consequat, mauris eget porttitor elementum, neque massa porta lorem, a ultrices sapien ligula nec orci.
+                        <br>
+                      </p>
+                    </div>
                   </div>
-
-                  <div class="mb-3">
-                    <label for="descricao" class="form-label mb-1"
-                      >Descrição do ticket</label
-                    >
-                    <textarea
-                      id="descricao"
-                      class="form-control"
-                      placeholder="Descreva o que está ocorrendo ou o que você precisa. Lembre-se de quanto mais informações, melhor. :)"
-                      rows="7"
-                    ></textarea>
+                  <div class="card mb-3">
+                    <div class="card-header d-flex justify-content-between card-header-support">
+                      <span class="fw-medium">Marcelo Guedes <span>em 06/09/2025 às 09:34</span></span>
+                      <span class="fw-medium">Ação 02</span>
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        Bom dia, Marcia! Estou bem e você?
+                        <br>
+                        <br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel sapien ac metus finibus tincidunt. Vivamus a diam nec ipsum facilisis tempus. Suspendisse at semper justo, vitae ultricies arcu.
+                        <br>
+                        <br>
+                        Integer ut felis non libero dictum fermentum. Proin at nunc in neque laoreet sodales? 
+                        <br>
+                        <br>
+                        Atenciosamente,
+                        <br>
+                        Marcelo Guedes
+                      </p>
+                    </div>
                   </div>
-
-                  <div class="border-top pt-3">
-                    <h5 class="fs-5">Anexos</h5>
-                    <ul
-                      class="list-unstyled d-flex flex-wrap gap-2 mt-2 attachments"
-                    >
-                      <li
-                        class="border rounded p-2 d-flex align-items-center gap-2 bg-light"
-                      >
-                        <span class="material-symbols-outlined fs-5"
-                          >draft</span
-                        >
-                        print.png
-                      </li>
-                      <li
-                        class="border rounded p-2 d-flex align-items-center gap-2 bg-light"
-                      >
-                        <span class="material-symbols-outlined fs-5"
-                          >draft</span
-                        >
-                        print.png
-                      </li>
-                      <li
-                        class="border rounded p-2 d-flex align-items-center gap-2 bg-light"
-                      >
-                        <span class="material-symbols-outlined fs-5"
-                          >draft</span
-                        >
-                        print.png
-                      </li>
-                    </ul>
-
-                    <div class="d-flex justify-content-between mt-3">
-                      <label
-                        for="file-upload"
-                        class="btn btn-secondary d-flex align-items-center gap-2"
-                      >
-                        <span class="material-symbols-outlined">upload</span>
-                        Anexar Arquivo
-                      </label>
-                      <input id="file-upload" type="file" hidden />
-                      <button class="btn btn-primary">Abrir Ticket</button>
+                  <div class="card mb-3">
+                    <div class="card-header d-flex justify-content-between card-header-requester">
+                      <span class="fw-medium">Marcia Silva (Você) <span>em 05/09/2025 às 17:54</span></span>
+                      <span class="fw-medium">Ação 01</span>
+                    </div>
+                    <div class="card-body">
+                      <p class="card-text">
+                        Boa tarde, tudo bem?
+                        <br>
+                        <br>
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel sapien ac metus finibus tincidunt. Vivamus a diam nec ipsum facilisis tempus. Suspendisse at semper justo, vitae ultricies arcu.
+                      </p>
+                      <img src="./images/image.png" alt="image" class="img-fluid">
+                    </div>
+                    <div class="card-footer">
+                      <ul class="list-unstyled d-flex gap-2 c mt-2 mb-2 attachments">
+                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
+                          <span class="material-symbols-outlined fs-5">draft</span>
+                          EnvioLoteRps.xml
+                        </li>
+                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
+                          <span class="material-symbols-outlined fs-5">draft</span>
+                          ConsultaLoteRps.xml
+                        </li>
+                      </ul>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+
           <div
             class="tab-pane fade"
-            id="pills-contact"
+            id="pills-tk10016"
             role="tabpanel"
-            aria-labelledby="pills-contact-tab"
+            aria-labelledby="pills-tk10016-tab"
             tabindex="0"
           >
-            ...
           </div>
-          <div
-            class="tab-pane fade"
-            id="pills-disabled"
-            role="tabpanel"
-            aria-labelledby="pills-disabled-tab"
-            tabindex="0"
-          >
-            ...
-          </div>
+
         </div>
       </div>
     </main>
