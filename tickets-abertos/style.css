@@ -91,7 +91,10 @@ td {
     border-top: none;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
-    height: 15em;
+    min-height: 10em;
+    height: fit-content;
+    max-height: 25em;
+    overflow: auto;
 }
 
 .card-header-support {
