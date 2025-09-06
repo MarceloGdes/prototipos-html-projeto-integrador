@@ -83,6 +83,20 @@
     color: var(--muted);
 }
 
+.ql-toolbar.ql-snow {
+    padding: .375rem .75rem;
+    border-radius: var(--bs-border-radius);
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+#editor {
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+    height: 10em;
+}
+
 .attachments {
     li :hover {
         background-color: rgb(255, 62, 62);
@@ -95,7 +109,5 @@
 }
 
 .btn-secondary {
-    background: var(--platinium);
     border: none;
-    color: var(--black);
 }
