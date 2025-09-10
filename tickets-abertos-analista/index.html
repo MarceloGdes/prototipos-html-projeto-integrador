@@ -47,7 +47,7 @@
         <ul class="nav nav-pills overflow-x-auto" id="pills-tab" role="tablist">
           <li class="nav-item" role="presentation">
             <button
-              class="nav-link active"
+              class="nav-link nav-link-navbar active"
               id="pills-tickets-abertos-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-tickets-abertos"
@@ -61,7 +61,7 @@
           </li>
           <li class="nav-item position-relative" role="presentation">
             <button
-              class="nav-link pe-4"
+              class="nav-link nav-link-navbar pe-4"
               id="pills-tk10015-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-tk10015"
@@ -80,7 +80,7 @@
           </li>
           <li class="nav-item position-relative" role="presentation">
             <button
-              class="nav-link pe-4"
+              class="nav-link nav-link-navbar pe-4"
               id="pills-tk10016-tab"
               data-bs-toggle="pill"
               data-bs-target="#pills-tk10016"
@@ -107,23 +107,39 @@
       tabindex="-1"
       id="sidebarMenu"
     >
+      
       <div class="d-flex align-items-center mb-4">
         <span class="logo mt-3">Deskium</span>
       </div>
 
       <nav class="nav d-flex flex-column gap-3 flex-grow-1">
-        <button class="btn d-flex align-items-center gap-2">
-          <span class="material-symbols-outlined">add_box</span>
-          <span>Novo Ticket</span>
-        </button>
-        <button class="btn active d-flex align-items-center gap-2">
-          <span class="material-symbols-outlined">confirmation_number</span>
-          <span>Tickets Abertos</span>
-        </button>
-        <button class="btn d-flex align-items-center gap-2">
-          <span class="material-symbols-outlined">select_check_box</span>
-          <span>Tickets Fechados</span>
-        </button>
+        <ul class="navbar-nav justify-content-end gap-3">
+          <li class="nav-item">
+            <button class="btn active d-flex align-items-center gap-2 w-100">
+              <span class="material-symbols-outlined">confirmation_number</span>
+              <span>Meus tickets abertos</span>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn d-flex align-items-center gap-2 w-100">
+              <span class="material-symbols-outlined">select_check_box</span>
+              <span>Meus tickets fechados</span>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn d-flex align-items-center gap-2 w-100">
+              <span class="material-symbols-outlined">all_inbox</span>
+              <span>Todos os tickets</span>
+            </button>
+          </li>
+          <li class="nav-item">
+            <button class="btn d-flex align-items-center gap-2 w-100">
+              <span class="material-symbols-outlined">analytics</span>
+              <span>Minhas métricas</span>
+            </button>
+          </li>
+        </ul>
+        
         <button class="btn mt-auto d-flex align-items-center gap-2">
           <span class="material-symbols-outlined">logout</span>
           <span>Sair</span>
@@ -137,127 +153,165 @@
       <div class="container-fluid">
         <div class="tab-content" id="pills-tabContent">
           <div
-            class="tab-pane fade show active"
+            class="tab-pane fade "
             id="pills-tickets-abertos"
             role="tabpanel"
             aria-labelledby="pills-tickets-abertos-tab"
             tabindex="0"
-          >
-            <div class="card border-0 p-4 card-tickets-list">
-              <form class="mb-3">
-                <div class="row g-3">
-                  <div class="col-md-2">
-                    <label class="form-label">Número do ticket</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      placeholder="0000"
-                    />
-                  </div>
+          > 
 
-                  <div class="col">
-                    <label class="form-label">Responsável</label>
-                    <select class="form-select">
-                      <option>Selecione..</option>
-                      <option>Marcelo Guedes</option>
-                      <option>Ana Paula</option>
-                    </select>
-                  </div>
+            <div class="accordion mb-2" id="accordionFiltros">
+                <div class="accordion-item">
+                  <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                      Filtros
+                    </button>
+                  </h2>
+                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#filtros">
+                    <div class="accordion-body border-0">
+                      <form class="mb-3">
+                        <div class="row g-3">
+                          <div class="col-md-2">
+                            <label class="form-label">Número do ticket</label>
+                            <input
+                              type="number"
+                              class="form-control"
+                              placeholder="0000"
+                            />
+                          </div>
 
-                  <div class="col">
-                    <label class="form-label">Sub-Status</label>
-                    <select class="form-select">
-                      <option>Selecione..</option>
-                      <option>Aguardando meu retorno</option>
-                      <option>Em atedimento</option>
-                    </select>
-                  </div>
+                          <div class="col">
+                            <label class="form-label">Solicitante</label>
+                            <input  
+                              type="text"
+                              class="form-control"
+                              placeholder="Nome"
+                            />
+                          </div>
 
-                  <div class="col">
-                    <label class="form-label">Motivo</label>
-                    <select class="form-select">
-                      <option>Selecione..</option>
-                      <option>Emissão de NFSe</option>
-                      <option>Envio de e-mail</option>
-                    </select>
-                  </div>
+                          <div class="col">
+                            <label class="form-label">Empresa</label>
+                            <input  
+                              type="text"
+                              class="form-control"
+                              placeholder="Nome"
+                            />
+                          </div>
 
-                  <div class="col">
-                    <label class="form-label">Categoria</label>
-                    <select class="form-select">
-                      <option>Selecione</option>
-                      <option>Dúvida</option>
-                      <option>Erro do sistema</option>
-                    </select>
+                          <div class="col">
+                            <label class="form-label">Motivo</label>
+                            <select class="form-select">
+                              <option>Selecione..</option>
+                              <option>Emissão de NFSe</option>
+                              <option>Envio de e-mail</option>
+                            </select>
+                          </div>
+
+                          <div class="col">
+                            <label class="form-label">Categoria</label>
+                            <select class="form-select">
+                              <option>Selecione</option>
+                              <option>Dúvida</option>
+                              <option>Erro do sistema</option>
+                            </select>
+                          </div>
+                        </div>
+
+                        <div class="d-flex gap-2 mt-3 mb-4 flex-grow">
+                          <button class="btn btn-primary d-flex justify-content-center align-items-center gap-1">
+                            <span class="material-symbols-outlined fs-5">search</span>
+                            <span>Filtrar</span>
+                          </button>
+                          <button class="btn btn-secondary d-flex justify-content-center align-items-center gap-1">
+                            <span class="material-symbols-outlined fs-5">ink_eraser</span>
+                            <span>Limpar Filtros</span>
+                          </button>
+                        </div>
+                      </form>
+                    </div>
                   </div>
                 </div>
+            </div>
 
-                <div class="d-flex gap-2 mt-3 mb-4 flex-grow">
-                  <button class="btn btn-primary d-flex justify-content-center align-items-center gap-1">
-                    <span class="material-symbols-outlined fs-5">search</span>
-                    <span>Filtrar</span>
+            <div class="card border-0 pt-3 p-4 card-tickets-list">
+              <ul class="nav nav-tabs mb-2" id="sub-status-tab" role="tablist">
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link nav-link-sub-status active" id="new-tickets-tab" data-bs-toggle="tab" data-bs-target="#new-tickets-tab-pane" type="button" role="tab" aria-controls="new-tickets-tab-pane" aria-selected="true">
+                    Novos
                   </button>
-                  <button class="btn btn-secondary d-flex justify-content-center align-items-center gap-1">
-                    <span class="material-symbols-outlined fs-5">ink_eraser</span>
-                    <span>Limpar Filtros</span>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link nav-link-sub-status" id="atendimento-tab" data-bs-toggle="tab" data-bs-target="#atendimento-tab-pane" type="button" role="tab" aria-controls="atendimento-tab-pane" aria-selected="false">
+                    Em atendimento
                   </button>
-                  <button class="btn btn-success d-flex justify-content-center align-items-center gap-1 ms-auto">
-                    <span class="material-symbols-outlined fs-5">add_box</span>
-                    <span>Novo Ticket</span>
+                </li>
+                <li class="nav-item" role="presentation">
+                  <button class="nav-link nav-link-sub-status" id="aguardadndo-retorno-tab" data-bs-toggle="tab" data-bs-target="#aguardadndo-retorno-tab-pane" type="button" role="tab" aria-controls="aguardadndo-retorno-tab-pane" aria-selected="false">
+                    Aguardando retorno
                   </button>
+                </li>
+              </ul>
+              
+              <div class="tab-content pe-1 ps-1" id="sub-status-tabContent">
+                <div class="tab-pane fade show active" id="new-tickets-tab-pane" role="tabpanel" aria-labelledby="new-tickets-tab" tabindex="0">
+                  
+                  <div class="card border-0 card-table">
+                    <div class="table-responsive">
+                      <table class="table align-middle">
+                        <thead>
+                          <tr>
+                            <th scope="col" class="fw-medium">Ticket</th>
+                            <th scope="col" class="fw-medium">Título</th>
+                            <th scope="col" class="fw-medium">Solicitante</th>
+                            <th scope="col" class="fw-medium">Motivo</th>
+                            <th scope="col" class="fw-medium">Categoria</th>
+                            <th scope="col" class="fw-medium">Data de Abertura</th>
+                            <th scope="col" class="fw-medium">Previsão de Resolução</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr class="">
+                            <td>
+                              <a href=""> #10015 </a>
+                            </td>
+                            <td>Problema ao gerar o faturamento dos clientes.</td>
+                            <td>Marcia Silva</td>
+                            <td>Emissão de NFSe</td>
+                            <td>Dúvida</td>
+                            <td>30/08/2025</td>
+                            <td>07/09/2025</td>
+                          </tr>
+                          <tr class="">
+                            <td>
+                              <a href=""> #10016 </a>
+                            </td>
+                            <td>Lorem ipsum dolor sit amet</td>
+                            <td>Marcia Silva</td>
+                            <td>Envio de e-mail</td>
+                            <td>Erro do sistema</td>
+                            <td>30/08/2025</td>
+                            <td>07/09/2025</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>   
+                  </div>
+               
                 </div>
-              </form>
+                
+                <div class="tab-pane fade" id="atendimento-tab-pane" role="tabpanel" aria-labelledby="atendimento-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="aguardadndo-retorno-tab-pane" role="tabpanel" aria-labelledby="aguardadndo-retorno-tab" tabindex="0">...</div>
+                <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
 
-              <div class="table-responsive">
-                <table class="table align-middle">
-                  <thead>
-                    <tr>
-                      <th scope="col" class="fw-medium">Ticket</th>
-                      <th scope="col" class="fw-medium">Título</th>
-                      <th scope="col" class="fw-medium">Sub-Status</th>
-                      <th scope="col" class="fw-medium">Motivo</th>
-                      <th scope="col" class="fw-medium">Categoria</th>
-                      <th scope="col" class="fw-medium">Responsável</th>
-                      <th scope="col" class="fw-medium">Data de Abertura</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <tr class="border-bottom">
-                      <td>
-                        <a href=""> #10015 </a>
-                      </td>
-                      <td>Problema ao gerar o faturamento dos clientes.</td>
-                      <td class="td-substatus">
-                        <span class="badge bg-warning text-dark">
-                          Aguardando meu retorno
-                        </span>
-                      </td>
-                      <td>Emissão de NFSe</td>
-                      <td>Dúvida</td>
-                      <td>Marcelo Guedes</td>
-                      <td>30/08/2025</td>
-                    </tr>
-                    <tr class="border-bottom">
-                      <td>
-                        <a href=""> #10016 </a>
-                      </td>
-                      <td>Lorem ipsum dolor sit amet</td>
-                      <td class="td-substatus">
-                        <span class="badge bg-success"> Em atendimento </span>
-                      </td>
-                      <td>Envio de e-mail</td>
-                      <td>Erro do sistema</td>
-                      <td>Ana Paula</td>
-                      <td>30/08/2025</td>
-                    </tr>
-                  </tbody>
-                </table>
               </div>
+              
+
+              
             </div>
           </div>
 
           <div
-            class="tab-pane fade"
+            class="tab-pane fade show active"
             id="pills-tk10015"
             role="tabpanel"
             aria-labelledby="pills-tk10015-tab"
@@ -280,15 +334,15 @@
                   <div
                     class="d-flex justify-content-between align-items-center mb-1"
                   >
-                    <p class="fw-medium mb-0">Data de Abertura:</p>
-                    <span class="">30/08/2025</span>
+                    <p class="fw-medium mb-0">Abertura:</p>
+                    <span class="">30/08/2025 - 10:30</span>
                   </div>
 
                   <div
                     class="d-flex justify-content-between align-items-center mb-4"
                   >
-                    <p class="fw-medium mb-0">Data de Fechamento:</p>
-                    <span class=""></span>
+                    <p class="fw-medium mb-0">Prev. Resolução:</p>
+                    <span class="">08/09/2025 - 15:45</span>
                   </div>
 
                   <div class="mb-2">
@@ -299,54 +353,84 @@
                   </div>
 
                   <div class="mb-2">
-                    <p class="fw-normal mb-0 fw-medium">Motivo</p>
-                    <div class="p-2 rounded border ticket-info-value mb-2">
-                      Emissão de NFS-e
-                    </div>
+                    <label class="form-label fw-normal mb-0 fw-medium">Sub-Status</label>
+                    <select class="form-select">
+                      <option>Novo</option>
+                      <option>Aguardando retorno</option>
+                      <option>Em atedimento</option>
+                    </select>
                   </div>
 
                   <div class="mb-2">
-                    <p class="fw-normal mb-0 fw-medium">Categoria</p>
-                    <div class="p-2 rounded border ticket-info-value mb-2">
-                      Dúvida
-                    </div>
+                    <label class="form-label fw-normal mb-0 fw-medium">Motivo</label>
+                    <select class="form-select">
+                      <option>Emissão de NFSe</option>
+                      <option>Envio de e-mail</option>
+                    </select>
                   </div>
 
                   <div class="mb-2">
-                    <p class="fw-normal mb-0 fw-medium">Sub-Status</p>
-                    <div class="p-2 rounded border ticket-info-value mb-2">
-                      Aguardando meu retorno
-                    </div>
+                    <label class="form-label fw-normal mb-0 fw-medium">Categoria</label>
+                    <select class="form-select">
+                      <option>Dúvida</option>
+                      <option>Erro do sistema</option>
+                    </select>
                   </div>
+
+                  <div class="mb-2">
+                    <label class="form-label fw-normal mb-0 fw-medium">Prioridade</label>
+                    <select class="form-select">
+                      <option>Baixa</option>
+                      <option>Média</option>
+                      <option>Alta</option>
+                    </select>
+                  </div>
+
+                  
                 </div>
               </div>
 
               <!-- Card Ticket -->
               <div class="col-md-9">
                 <div class="card p-3 card-actions">
-                  <div class="pb-3 border-bottom mb-3">
+                  <div class="pb-3 border-bottom mb-4">
                     <form>
                       <div class="mb-3 form-group">
-                        <label  class="form-label fs-5 fw-bold">Nova ação</label>
+                        <h2  class="fs-5 fw-medium">Nova ação</h2>
                         <div
                           id="editor"
                           class="form-control"
                         ></div>
+                        <div class=" p-2 d-flex gap-2 form-data-hora-atendimento">
+                          <div class="d-flex align-items-center gap-2 me-2">
+                            <label for="date" class="fw-normal mb-1">Dia</label>
+                            <input type="date" name="date" id="date" class="form-control"/>
+                          </div>
+                          <div class="d-flex align-items-center gap-1 me-2">
+                            <label for="time" class="fw-normal mb-1">De</label>
+                            <input type="time" name="time" id="time" class="form-control">
+                          </div>
+                          <div class="d-flex align-items-center gap-1">
+                            <label for="time-fim" class="fw-normal mb-1">Até</label>
+                            <input type="time" name="time-fim" id="time-fim" class="form-control">
+                          </div>
+                        </div>
+                          <ul class="list-unstyled d-flex gap-2 pt-3 p-2 mb-2 attachments-acao">
+                            <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
+                              <span class="material-symbols-outlined fs-5">draft</span>
+                              print.png
+                            </li>
+                            <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
+                              <span class="material-symbols-outlined fs-5">draft</span>
+                              print.png
+                            </li>
+                            <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
+                              <span class="material-symbols-outlined fs-5">draft</span>
+                              print.png
+                            </li>
+                          </ul>
                       </div>                    
-                      <ul class="list-unstyled d-flex gap-2 c mt-2 mb-2 attachments">
-                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
-                          <span class="material-symbols-outlined fs-5">draft</span>
-                          print.png
-                        </li>
-                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
-                          <span class="material-symbols-outlined fs-5">draft</span>
-                          print.png
-                        </li>
-                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
-                          <span class="material-symbols-outlined fs-5">draft</span>
-                          print.png
-                        </li>
-                      </ul>
+
                       <div class="d-flex align-items-center justify-content-between">
                         <label for="file-upload" class="btn btn-secondary d-flex gap-2 p-2 me-3 border-0">
                           <span class="material-symbols-outlined fs-4">upload</span>
@@ -354,12 +438,18 @@
                         </label>
                         <input id="file-upload" type="file" hidden />
 
-                        <button class="btn btn-primary p-2 border-0 m-0" type="submit">Adicionar Ação</button>
+                        <label for="audio-upload" class="btn btn-transcrever d-flex gap-2 p-2 me-3 border-0">
+                          <img src="assets/gemini-color.svg">
+                          Transcrever Audío
+                        </label>
+                        <input id="audio-upload" type="file" hidden />
+
+                        <button class="btn btn-primary p-2 border-0 m-0 ms-auto" type="submit">Adicionar Ação</button>
                       </div>
                     </form>
                   </div>
 
-
+                  <h2 class="fs-5 fw-medium">Ações</h2>
                   <div class="card mb-3">
                     <div class="card-header d-flex justify-content-between card-header-support">
                       <span class="fw-medium">Marcelo Guedes <span>em 06/09/2025 às 13:20</span></span>

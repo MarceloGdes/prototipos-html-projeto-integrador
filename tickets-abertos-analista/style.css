@@ -12,16 +12,16 @@
     color: var(--antiflash-white);
 }
 
-.nav-link.active {
+.nav-link-navbar.active {
     background-color: var(--oxford-blue) !important;
     color: var(--antiflash-white);
 }
 
-.nav-link {
+.nav-link-navbar {
     color: var(--antiflash-white);
 }
 
-.nav-link:hover {
+.nav-link-navbar:hover {
     color: var(--verdigris);
 }
 
@@ -57,17 +57,59 @@
 }
 
 /* Cards */
-.card-requester, .card-actions, .card-tickets-list {
+.card-requester, .card-actions, .card-tickets-list, .accordion-item{
     border: 1px solid var(--line);
     background: var(--antiflash-white);
     box-shadow: var(--shadow);
-    height: calc(100vh - 70px);
-    overflow: auto;
-    
 }
 
-.ticket-info-value {
-    background-color: #eaeaea88;
+.card-requester, .card-actions{
+    height: calc(100vh - 70px);
+    overflow: auto;
+}
+
+.card-table {
+    background-color: var(--antiflash-white);
+    max-height: calc(100vh - 130px);
+}
+
+.card-tickets-list {
+    height: calc(100vh - 130px);
+    overflow: auto;
+}
+
+
+
+.accordion-button {
+    background: var(--antiflash-white);
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--oxford-blue);
+    background-color: var(--antiflash-white);
+}
+
+.nav-link-sub-status {
+
+}
+
+.nav-link-sub-status.active {
+    background-color: var(--antiflash-white) !important;
+    color: var(--oxford-blue) !important;
+}
+
+.nav-link-sub-status {
+    color: var(--verdigris);
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
 }
 
 table,
@@ -84,6 +126,10 @@ td {
     vertical-align: middle;
 }
 
+.ticket-info-value {
+    background-color: #eaeaea88;
+}
+
 .ql-toolbar.ql-snow {
     padding: .375rem .75rem;
     border-radius: var(--bs-border-radius);
@@ -93,14 +139,30 @@ td {
 
 #editor {
     border-top: none;
-    border-top-right-radius: 0;
-    border-top-left-radius: 0;
+    border-radius: 0;
     min-height: 10em;
     height: fit-content;
     max-height: 25em;
     overflow: auto;
 }
 
+.form-data-hora-atendimento {
+    border: 1px solid #ccc;
+    border-top: none;
+    border-bottom: none;
+}
+
+.attachments-acao {
+    border-radius: 0.375rem;
+    border: 1px solid #ccc; 
+    border-top: none;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.card-body {
+    background-color: #F5F5F5;
+}
 
 .card-header-support {
     background-color: #1c2541;
@@ -114,4 +176,9 @@ td {
 
 .btn-primary {
     background-color: var(--verdigris);
+}
+
+.btn-transcrever {
+    background-color: #3d74a7;
+    color: var(--antiflash-white);
 }
