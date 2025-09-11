@@ -74,7 +74,7 @@
             </button>
             <button
               type="button"
-              class="btn-close btn-close-white position-absolute top-0 end-0 me-1 mt-1 p-1"
+              class="btn-close btn-tab-close  btn-close-white position-absolute top-0 end-0 me-1 mt-1 p-1"
               aria-label="Close"
             ></button>
           </li>
@@ -93,7 +93,7 @@
             </button>
              <button
               type="button"
-              class="btn-close btn-close-white position-absolute top-0 end-0 me-1 mt-1 p-1"
+              class="btn-close btn-tab-close  btn-close-white position-absolute top-0 end-0 me-1 mt-1 p-1"
               aria-label="Close"
             ></button>
           </li>
@@ -265,6 +265,7 @@
                             <th scope="col" class="fw-medium">Solicitante</th>
                             <th scope="col" class="fw-medium">Motivo</th>
                             <th scope="col" class="fw-medium">Categoria</th>
+                            <th scope="col" class="fw-medium">Prioridade</th>
                             <th scope="col" class="fw-medium">Data de Abertura</th>
                             <th scope="col" class="fw-medium">Previsão de Resolução</th>
                           </tr>
@@ -278,6 +279,11 @@
                             <td>Marcia Silva</td>
                             <td>Emissão de NFSe</td>
                             <td>Dúvida</td>
+                            <td>
+                              <span class="badge bg-success text-light">
+                                Baixa
+                              </span>
+                            </td>
                             <td>30/08/2025</td>
                             <td>07/09/2025</td>
                           </tr>
@@ -289,6 +295,11 @@
                             <td>Marcia Silva</td>
                             <td>Envio de e-mail</td>
                             <td>Erro do sistema</td>
+                            <td>
+                              <span class="badge bg-warning text-dark">
+                                Média
+                              </span>
+                            </td>
                             <td>30/08/2025</td>
                             <td>07/09/2025</td>
                           </tr>
@@ -318,7 +329,7 @@
             tabindex="0"
           >
             <div class="row g-3">
-              <!-- Card Solicitante -->
+              <!-- Card Infos Ticket -->
               <div class="col-md-3">
                 <div class="card p-3 card-requester">
                   <div class="border-bottom mt-2 mb-3">
@@ -393,62 +404,81 @@
               <!-- Card Ticket -->
               <div class="col-md-9">
                 <div class="card p-3 card-actions">
-                  <div class="pb-3 border-bottom mb-4">
-                    <form>
+
+                  <div class="card p-3 mb-4">
+                    <h5 class="mb-3">Nova Ação</h5>          
+                    <form action="">
                       <div class="mb-3 form-group">
-                        <h2  class="fs-5 fw-medium">Nova ação</h2>
                         <div
                           id="editor"
                           class="form-control"
                         ></div>
-                        <div class=" p-2 d-flex gap-2 form-data-hora-atendimento">
-                          <div class="d-flex align-items-center gap-2 me-2">
-                            <label for="date" class="fw-normal mb-1">Dia</label>
-                            <input type="date" name="date" id="date" class="form-control"/>
-                          </div>
-                          <div class="d-flex align-items-center gap-1 me-2">
-                            <label for="time" class="fw-normal mb-1">De</label>
-                            <input type="time" name="time" id="time" class="form-control">
-                          </div>
-                          <div class="d-flex align-items-center gap-1">
-                            <label for="time-fim" class="fw-normal mb-1">Até</label>
-                            <input type="time" name="time-fim" id="time-fim" class="form-control">
-                          </div>
+                      </div>
+
+                      <!-- data/hora -->
+                      <div class="row mb-3">
+                        <div class="col-md-3">
+                          <label class="form-label">Dia</label>
+                          <input type="date" class="form-control">
                         </div>
-                          <ul class="list-unstyled d-flex gap-2 pt-3 p-2 mb-2 attachments-acao">
-                            <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
-                              <span class="material-symbols-outlined fs-5">draft</span>
-                              print.png
-                            </li>
-                            <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
-                              <span class="material-symbols-outlined fs-5">draft</span>
-                              print.png
-                            </li>
-                            <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
-                              <span class="material-symbols-outlined fs-5">draft</span>
-                              print.png
-                            </li>
-                          </ul>
-                      </div>                    
+                        <div class="col-md-3">
+                          <label class="form-label">De</label>
+                          <input type="time" class="form-control">
+                        </div>
+                        <div class="col-md-3">
+                          <label class="form-label">Até</label>
+                          <input type="time" class="form-control">
+                        </div>
+                      </div>
 
-                      <div class="d-flex align-items-center justify-content-between">
-                        <label for="file-upload" class="btn btn-secondary d-flex gap-2 p-2 me-3 border-0">
-                          <span class="material-symbols-outlined fs-4">upload</span>
-                          Anexar Arquivo
-                        </label>
-                        <input id="file-upload" type="file" hidden />
+                      <!-- Arquivos anexados -->
+                      <div class="mb-3">
+                        <label class="form-label">Arquivos</label>
+                        <div class="d-flex flex-wrap gap-2">
+                          <span class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center">
+                            <span>print.png</span>
+                            <button type="button" class="btn-close btn-delete-attachment" aria-label="Close"></button>
+                          </span>
+                          <span class="badge bg-light text-dark border d-flex align-itens-center gap 3 align-items-center">
+                            <span>print.png</span>
+                            <button type="button" class="btn-close btn-delete-attachment" aria-label="Close"></button>
+                          </span>
+                          <span class="badge bg-light text-dark border d-flex align-itens-center gap 3 align-items-center">
+                            <span>print.png</span>
+                            <button type="button" class="btn-close btn-delete-attachment" aria-label="Close"></button>
+                          </span>
+                          
+                        </div>
+                      </div>
 
-                        <label for="audio-upload" class="btn btn-transcrever d-flex gap-2 p-2 me-3 border-0">
-                          <img src="assets/gemini-color.svg">
-                          Transcrever Audío
-                        </label>
-                        <input id="audio-upload" type="file" hidden />
+                      <!-- Botões -->
+                      <div class="d-flex justify-content-between">
+                        <div class="d-flex">
+                          <label for="file-upload" class="btn btn-secondary d-flex gap-2 p-2 me-3 border-0">
+                            <span class="material-symbols-outlined fs-4">upload</span>
+                            Anexar Arquivo
+                          </label>
+                          <input id="file-upload" type="file" hidden />
 
-                        <button class="btn btn-primary p-2 border-0 m-0 ms-auto" type="submit">Adicionar Ação</button>
+                          <label for="audio-upload" class="btn btn-transcrever d-flex align-i gap-2 p-2 me-3 border-0">
+                            <svg fill="currentColor" fill-rule="evenodd" height="1.3em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1.3em" xmlns="http://www.w3.org/2000/svg">
+                              <title>Gemini</title>
+                              <path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z"></path>
+                            </svg>
+                            Transcrever Audio
+                          </label>
+                          <input id="audio-upload" type="file" hidden />
+                        </div>
+                        <div class="d-flex flex-row align-items-center gap-3">
+                          <div class="form-check form-switch">
+                            <input class="form-check-input" type="checkbox" role="switch" id="switchCheckDefault">
+                            <label class="form-check-label" for="switchCheckDefault">Ação interna</label>
+                          </div>
+                          <button class="btn btn-primary p-2 border-0 m-0 ms-auto" type="submit">Adicionar Ação</button>
+                        </div>
                       </div>
                     </form>
                   </div>
-
                   <h2 class="fs-5 fw-medium">Ações</h2>
                   <div class="card mb-3">
                     <div class="card-header d-flex justify-content-between card-header-support">
