@@ -6,7 +6,10 @@
     <title>Tickets Fechados</title>
 
     <!-- Quil Editor -->
-    <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css"
+      rel="stylesheet"
+    />
 
     <!-- Google Fonts -->
     <link
@@ -41,7 +44,7 @@
           data-bs-target="#sidebarMenu"
           aria-controls="sidebarMenu"
         >
-          <span class="material-symbols-outlined menu-icon ">menu</span>
+          <span class="material-symbols-outlined menu-icon">menu</span>
           <span class="fw-bold logo fs-4">Deskium</span>
         </button>
         <ul class="nav nav-pills overflow-x-auto" id="pills-tab" role="tablist">
@@ -74,7 +77,7 @@
             </button>
             <button
               type="button"
-              class="btn-close btn-tab-close  btn-close-white position-absolute top-0 end-0 me-1 mt-1 p-1"
+              class="btn-close btn-tab-close btn-close-white position-absolute top-0 end-0 me-1 mt-1 p-1"
               aria-label="Close"
             ></button>
           </li>
@@ -91,9 +94,9 @@
             >
               #10016
             </button>
-             <button
+            <button
               type="button"
-              class="btn-close btn-tab-close  btn-close-white position-absolute top-0 end-0 me-1 mt-1 p-1"
+              class="btn-close btn-tab-close btn-close-white position-absolute top-0 end-0 me-1 mt-1 p-1"
               aria-label="Close"
             ></button>
           </li>
@@ -107,7 +110,6 @@
       tabindex="-1"
       id="sidebarMenu"
     >
-      
       <div class="d-flex align-items-center mb-4">
         <span class="logo mt-3">Deskium</span>
       </div>
@@ -139,7 +141,7 @@
             </button>
           </li>
         </ul>
-        
+
         <button class="btn mt-auto d-flex align-items-center gap-2">
           <span class="material-symbols-outlined">logout</span>
           <span>Sair</span>
@@ -153,108 +155,167 @@
       <div class="container-fluid">
         <div class="tab-content" id="pills-tabContent">
           <div
-            class="tab-pane fade "
+            class="tab-pane fade show active"
             id="pills-tickets-abertos"
             role="tabpanel"
             aria-labelledby="pills-tickets-abertos-tab"
             tabindex="0"
-          > 
-
+          >
             <div class="accordion mb-2" id="accordionFiltros">
-                <div class="accordion-item">
-                  <h2 class="accordion-header">
-                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-                      Filtros
-                    </button>
-                  </h2>
-                  <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#filtros">
-                    <div class="accordion-body border-0">
-                      <form class="mb-3">
-                        <div class="row g-3">
-                          <div class="col-md-2">
-                            <label class="form-label">Número do ticket</label>
-                            <input
-                              type="number"
-                              class="form-control"
-                              placeholder="0000"
-                            />
-                          </div>
-
-                          <div class="col">
-                            <label class="form-label">Solicitante</label>
-                            <input  
-                              type="text"
-                              class="form-control"
-                              placeholder="Nome"
-                            />
-                          </div>
-
-                          <div class="col">
-                            <label class="form-label">Empresa</label>
-                            <input  
-                              type="text"
-                              class="form-control"
-                              placeholder="Nome"
-                            />
-                          </div>
-
-                          <div class="col">
-                            <label class="form-label">Motivo</label>
-                            <select class="form-select">
-                              <option>Selecione..</option>
-                              <option>Emissão de NFSe</option>
-                              <option>Envio de e-mail</option>
-                            </select>
-                          </div>
-
-                          <div class="col">
-                            <label class="form-label">Categoria</label>
-                            <select class="form-select">
-                              <option>Selecione</option>
-                              <option>Dúvida</option>
-                              <option>Erro do sistema</option>
-                            </select>
-                          </div>
+              <div class="accordion-item">
+                <h2 class="accordion-header">
+                  <button
+                    class="accordion-button"
+                    type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#collapseOne"
+                    aria-expanded="false"
+                    aria-controls="collapseOne"
+                  >
+                    Filtros
+                  </button>
+                </h2>
+                <div
+                  id="collapseOne"
+                  class="accordion-collapse collapse"
+                  data-bs-parent="#filtros"
+                >
+                  <div class="accordion-body border-0">
+                    <form class="mb-3">
+                      <div class="row g-3">
+                        <div class="col-md-2">
+                          <label class="form-label">Número do ticket</label>
+                          <input
+                            type="number"
+                            class="form-control"
+                            placeholder="0000"
+                          />
                         </div>
 
-                        <div class="d-flex gap-2 mt-3 mb-4 flex-grow">
-                          <button class="btn btn-primary d-flex justify-content-center align-items-center gap-1">
-                            <span class="material-symbols-outlined fs-5">search</span>
-                            <span>Filtrar</span>
-                          </button>
-                          <button class="btn btn-secondary d-flex justify-content-center align-items-center gap-1">
-                            <span class="material-symbols-outlined fs-5">ink_eraser</span>
-                            <span>Limpar Filtros</span>
-                          </button>
+                        <div class="col-md-2">
+                          <label class="form-label">Assunto</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Assunto do ticket"
+                        />
+                      </div>
+
+                        <div class="col">
+                          <label class="form-label">Solicitante</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Nome"
+                          />
                         </div>
-                      </form>
-                    </div>
+
+                        <div class="col">
+                          <label class="form-label">Empresa</label>
+                          <input
+                            type="text"
+                            class="form-control"
+                            placeholder="Nome"
+                          />
+                        </div>
+
+                        <div class="col">
+                          <label class="form-label">Motivo</label>
+                          <select class="form-select">
+                            <option>Selecione..</option>
+                            <option>Emissão de NFSe</option>
+                            <option>Envio de e-mail</option>
+                          </select>
+                        </div>
+
+                        <div class="col">
+                          <label class="form-label">Categoria</label>
+                          <select class="form-select">
+                            <option>Selecione</option>
+                            <option>Dúvida</option>
+                            <option>Erro do sistema</option>
+                          </select>
+                        </div>
+                      </div>
+
+                      <div class="d-flex gap-2 mt-3 mb-4 flex-grow">
+                        <button
+                          class="btn btn-primary d-flex justify-content-center align-items-center gap-1"
+                        >
+                          <span class="material-symbols-outlined fs-5"
+                            >search</span
+                          >
+                          <span>Filtrar</span>
+                        </button>
+                        <button
+                          class="btn btn-secondary d-flex justify-content-center align-items-center gap-1"
+                        >
+                          <span class="material-symbols-outlined fs-5"
+                            >ink_eraser</span
+                          >
+                          <span>Limpar Filtros</span>
+                        </button>
+                      </div>
+                    </form>
                   </div>
                 </div>
+              </div>
             </div>
 
             <div class="card border-0 pt-3 p-4 card-tickets-list">
               <ul class="nav nav-tabs mb-2" id="sub-status-tab" role="tablist">
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link nav-link-sub-status active" id="new-tickets-tab" data-bs-toggle="tab" data-bs-target="#new-tickets-tab-pane" type="button" role="tab" aria-controls="new-tickets-tab-pane" aria-selected="true">
+                  <button
+                    class="nav-link nav-link-sub-status active"
+                    id="new-tickets-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#new-tickets-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="new-tickets-tab-pane"
+                    aria-selected="true"
+                  >
                     Novos
                   </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link nav-link-sub-status" id="atendimento-tab" data-bs-toggle="tab" data-bs-target="#atendimento-tab-pane" type="button" role="tab" aria-controls="atendimento-tab-pane" aria-selected="false">
+                  <button
+                    class="nav-link nav-link-sub-status"
+                    id="atendimento-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#atendimento-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="atendimento-tab-pane"
+                    aria-selected="false"
+                  >
                     Em atendimento
                   </button>
                 </li>
                 <li class="nav-item" role="presentation">
-                  <button class="nav-link nav-link-sub-status" id="aguardadndo-retorno-tab" data-bs-toggle="tab" data-bs-target="#aguardadndo-retorno-tab-pane" type="button" role="tab" aria-controls="aguardadndo-retorno-tab-pane" aria-selected="false">
+                  <button
+                    class="nav-link nav-link-sub-status"
+                    id="aguardadndo-retorno-tab"
+                    data-bs-toggle="tab"
+                    data-bs-target="#aguardadndo-retorno-tab-pane"
+                    type="button"
+                    role="tab"
+                    aria-controls="aguardadndo-retorno-tab-pane"
+                    aria-selected="false"
+                  >
                     Aguardando retorno
                   </button>
                 </li>
               </ul>
-              
+
               <div class="tab-content pe-1 ps-1" id="sub-status-tabContent">
-                <div class="tab-pane fade show active" id="new-tickets-tab-pane" role="tabpanel" aria-labelledby="new-tickets-tab" tabindex="0">
-                  
+                <div
+                  class="tab-pane fade show active"
+                  id="new-tickets-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="new-tickets-tab"
+                  tabindex="0"
+                >
                   <div class="card border-0 card-table">
                     <div class="table-responsive">
                       <table class="table align-middle">
@@ -266,8 +327,12 @@
                             <th scope="col" class="fw-medium">Motivo</th>
                             <th scope="col" class="fw-medium">Categoria</th>
                             <th scope="col" class="fw-medium">Prioridade</th>
-                            <th scope="col" class="fw-medium">Data de Abertura</th>
-                            <th scope="col" class="fw-medium">Previsão de Resolução</th>
+                            <th scope="col" class="fw-medium">
+                              Data de Abertura
+                            </th>
+                            <th scope="col" class="fw-medium">
+                              Previsão de Resolução
+                            </th>
                           </tr>
                         </thead>
                         <tbody>
@@ -275,7 +340,9 @@
                             <td>
                               <a href=""> #10015 </a>
                             </td>
-                            <td>Problema ao gerar o faturamento dos clientes.</td>
+                            <td>
+                              Problema ao gerar o faturamento dos clientes.
+                            </td>
                             <td>Marcia Silva</td>
                             <td>Emissão de NFSe</td>
                             <td>Dúvida</td>
@@ -305,25 +372,44 @@
                           </tr>
                         </tbody>
                       </table>
-                    </div>   
+                    </div>
                   </div>
-               
                 </div>
-                
-                <div class="tab-pane fade" id="atendimento-tab-pane" role="tabpanel" aria-labelledby="atendimento-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="aguardadndo-retorno-tab-pane" role="tabpanel" aria-labelledby="aguardadndo-retorno-tab" tabindex="0">...</div>
-                <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">...</div>
 
+                <div
+                  class="tab-pane fade"
+                  id="atendimento-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="atendimento-tab"
+                  tabindex="0"
+                >
+                  ...
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="aguardadndo-retorno-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="aguardadndo-retorno-tab"
+                  tabindex="0"
+                >
+                  ...
+                </div>
+                <div
+                  class="tab-pane fade"
+                  id="disabled-tab-pane"
+                  role="tabpanel"
+                  aria-labelledby="disabled-tab"
+                  tabindex="0"
+                >
+                  ...
+                </div>
               </div>
-              
-
-              
             </div>
           </div>
-          
+
           <!-- Ticket -->
           <div
-            class="tab-pane fade show active"
+            class="tab-pane fade"
             id="pills-tk10015"
             role="tabpanel"
             aria-labelledby="pills-tk10015-tab"
@@ -333,7 +419,7 @@
               <!-- Card Infos Ticket -->
               <div class="col-md-3">
                 <div class="card p-3 card-requester">
-                  <div class="border-bottom mt-2 mb-3">
+                  <div class="border-bottom mb-2">
                     <h2 class="fw-semibold fs-5">
                       Ticket
                       <span class="fw-bold" id="ticket-id">#10015</span>
@@ -351,21 +437,49 @@
                   </div>
 
                   <div
-                    class="d-flex justify-content-between align-items-center mb-4"
+                    class="d-flex justify-content-between align-items-center mb-1"
+                  >
+                    <p class="fw-medium mb-0">Limite 1° Resposta:</p>
+                    <span class="">30/08/2025 - 11:30</span>
+                  </div>
+
+                  <div
+                    class="d-flex justify-content-between align-items-center mb-3"
                   >
                     <p class="fw-medium mb-0">Prev. Resolução:</p>
                     <span class="">08/09/2025 - 15:45</span>
                   </div>
 
                   <div class="mb-2">
-                    <p class="fw-normal mb-0 fw-medium">Analista responsável</p>
-                    <div class="p-2 rounded border ticket-info-value mb-2">
-                      Marcelo Guedes
+                    <p class="mb-0 fw-medium">Solicitante</p>
+                    <div class="form-control rounded border ticket-info-value">
+                      <a
+                        href="#"
+                        data-bs-toggle="modal"
+                        data-bs-target="#requesterInfosModal"
+                        class="link-dark link-underline-opacity-25"
+                      >
+                        Empresa LTDA - Marcia Silva
+                      </a>
                     </div>
                   </div>
 
                   <div class="mb-2">
-                    <label class="form-label fw-normal mb-0 fw-medium">Sub-Status</label>
+                    <p class="mb-0 fw-medium">Analista responsável</p>
+                    <input
+                      class="form-control ticket-info-value"
+                      type="text"
+                      value="Marcelo Guedes"
+                      aria-label="Marcelo Guedes"
+                      disabled
+                      readonly
+                    />
+                  </div>
+
+                  <div class="mb-2">
+                    <label class="form-label fw-normal mb-0 fw-medium"
+                      >Sub-Status</label
+                    >
                     <select class="form-select">
                       <option>Novo</option>
                       <option>Aguardando retorno</option>
@@ -374,7 +488,9 @@
                   </div>
 
                   <div class="mb-2">
-                    <label class="form-label fw-normal mb-0 fw-medium">Motivo</label>
+                    <label class="form-label fw-normal mb-0 fw-medium"
+                      >Motivo</label
+                    >
                     <select class="form-select">
                       <option>Emissão de NFSe</option>
                       <option>Envio de e-mail</option>
@@ -382,7 +498,9 @@
                   </div>
 
                   <div class="mb-2">
-                    <label class="form-label fw-normal mb-0 fw-medium">Categoria</label>
+                    <label class="form-label fw-normal mb-0 fw-medium"
+                      >Categoria</label
+                    >
                     <select class="form-select">
                       <option>Dúvida</option>
                       <option>Erro do sistema</option>
@@ -390,223 +508,568 @@
                   </div>
 
                   <div class="mb-2">
-                    <label class="form-label fw-normal mb-0 fw-medium">Prioridade</label>
+                    <label class="form-label fw-normal mb-0 fw-medium"
+                      >Prioridade</label
+                    >
                     <select class="form-select">
                       <option>Baixa</option>
                       <option>Média</option>
                       <option>Alta</option>
                     </select>
                   </div>
+                </div>
+              </div>
 
-                  
+              <!-- Modal -->
+              <div
+                class="modal fade"
+                id="requesterInfosModal"
+                tabindex="-1"
+                aria-labelledby="requesterInfosModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1
+                        class="modal-title fs-5"
+                        id="requesterInfosModalLabel"
+                      >
+                        Informações do Solicitante
+                      </h1>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="mb-4">
+                        <h5>Empresa</h5>
+                        <div class="row mb-2">
+                          <div class="col-md-3">
+                            <label for="cnpjEmpresa">CNPJ</label>
+                            <input
+                              name="cnpjEmpresa"
+                              class="form-control ticket-info-value"
+                              type="text"
+                              value="00.000.000/0000-00"
+                              aria-label="00.000.000/0000-00"
+                              disabled
+                              readonly
+                            />
+                          </div>
+                          <div class="col">
+                            <label for="razaoSocial">Razão Social</label>
+                            <input
+                              name="razaoSocial"
+                              class="form-control ticket-info-value"
+                              type="text"
+                              value="Empresa X LTDA"
+                              aria-label="Empresa X LTDA"
+                              disabled
+                              readonly
+                            />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <label for="emailInstitucional">E-mail</label>
+                            <input
+                              name="emailInstitucional"
+                              class="form-control ticket-info-value"
+                              type="text"
+                              value="contato@empresax.com.br"
+                              aria-label="contato@empresax.com.br"
+                              disabled
+                              readonly
+                            />
+                          </div>
+                          <div class="col mb-2">
+                            <label for="telefoneEmpresa">Telefone</label>
+                            <input
+                              name="telefoneEmpresa"
+                              class="form-control ticket-info-value"
+                              type="tel"
+                              value="(45) 32523252"
+                              aria-label="(45) 3252-3252"
+                              disabled
+                              readonly
+                            />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <label for="observacoes">Observações</label>
+                            <textarea
+                              class="form-control ticket-info-value mh"
+                              disabled
+                            >
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate est mi, ut elementum purus dapibus non.</textarea
+                            >
+                          </div>
+                        </div>
+                      </div>
+                      <div>
+                        <h5>Solicitante</h5>
+                        <div class="row mb-2">
+                          <div class="col">
+                            <label for="nomeSolicitante">Nome</label>
+                            <input
+                              name="nomeSolicitante"
+                              class="form-control ticket-info-value"
+                              type="text"
+                              value="Marcia Silva"
+                              aria-label="Marcia Silva"
+                              disabled
+                              readonly
+                            />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="cargoSolicitante">Cargo</label>
+                            <input
+                              name="cargoSolicitante"
+                              class="form-control ticket-info-value"
+                              type="text"
+                              value="Gestor"
+                              aria-label="Gestor"
+                              disabled
+                              readonly
+                            />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="setorSolicitante">Setor</label>
+                            <input
+                              name="setorSolicitante"
+                              class="form-control ticket-info-value"
+                              type="text"
+                              value="Financeiro"
+                              aria-label="Financeiro"
+                              disabled
+                              readonly
+                            />
+                          </div>
+                        </div>
+                        <div class="row mb-2">
+                          <div class="col">
+                            <label for="emailSolicitante">E-mail</label>
+                            <input
+                              name="emailSolicitante"
+                              class="form-control ticket-info-value"
+                              type="text"
+                              value="marcia.silva@empresax.com.br"
+                              aria-label="marcia.silva@empresax.com.br"
+                              disabled
+                              readonly
+                            />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="telefoneSolicitante">Telefone</label>
+                            <input
+                              name="telefoneSolicitante"
+                              class="form-control ticket-info-value"
+                              type="tel"
+                              value="(45) 3252-3272"
+                              aria-label="(45) 3252-3272"
+                              disabled
+                              readonly
+                            />
+                          </div>
+                          <div class="col-md-3">
+                            <label for="celularSolicitante">Celular</label>
+                            <input
+                              name="celularSolicitante"
+                              class="form-control ticket-info-value"
+                              type="tel"
+                              value="(45) 99908-9070"
+                              aria-label="(45) 99908-9070"
+                              disabled
+                              readonly
+                            />
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col">
+                            <label for="observacoes">Observações</label>
+                            <textarea
+                              class="form-control ticket-info-value mh"
+                              disabled
+                            >
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate est mi, ut elementum purus dapibus non.</textarea
+                            >
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
 
               <!-- Card Ticket -->
               <div class="col-md-9">
                 <div class="card p-3 card-actions">
-
                   <div class="card p-3 mb-4">
-                    <h5 class="mb-3">Nova Ação</h5>          
+                    <div
+                      class="d-flex justify-content-between align-items-center mb-1"
+                    >
+                      <h5>Nova Ação</h5>
+                      <div class="form-check form-switch">
+                        <input
+                          class="form-check-input input-group-lg"
+                          type="checkbox"
+                          role="switch"
+                          id="switchCheckDefault"
+                        />
+                        <label class="form-check-label" for="switchCheckDefault"
+                          >Ação interna</label
+                        >
+                      </div>
+                    </div>
+
                     <form action="">
                       <div class="mb-3 form-group">
-                        <div
-                          id="editor"
-                          class="form-control"
-                        ></div>
+                        <div id="editor" class="form-control"></div>
                       </div>
 
                       <!-- data/hora -->
                       <div class="row mb-3">
                         <div class="col-md-2">
-                          <label class="form-label">Dia</label>
-                          <input type="date" class="form-control">
+                          <label class="form-label">Data</label>
+                          <input type="date" class="form-control" />
                         </div>
                         <div class="col-md-2">
-                          <label class="form-label">De</label>
-                          <input type="time" class="form-control">
+                          <label class="form-label">Incío</label>
+                          <input type="time" class="form-control" />
                         </div>
                         <div class="col-md-2">
-                          <label class="form-label">Até</label>
-                          <input type="time" class="form-control">
+                          <label class="form-label">Fim</label>
+                          <input type="time" class="form-control" />
+                        </div>
+                        <div class="col-md-2">
+                          <label class="form-label">Horas Apontadas</label>
+                          <input
+                            class="form-control"
+                            type="time"
+                            placeholder="10:00"
+                            aria-label="10:00"
+                            value="10"
+                            disabled
+                          />
                         </div>
                       </div>
 
                       <!-- Arquivos anexados -->
-                      <div class="mb-3">
-                        <label class="form-label">Arquivos</label>
-                        <div class="d-flex flex-wrap gap-2">
-                          <span class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center">
-                            <span>print.png</span>
-                            <button type="button" class="btn-close btn-delete-attachment" aria-label="Close"></button>
-                          </span>
-                          <span class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center">
-                            <span>print.png</span>
-                            <button type="button" class="btn-close btn-delete-attachment" aria-label="Close"></button>
-                          </span>
-                          <span class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center">
-                            <span>print.png</span>
-                            <button type="button" class="btn-close btn-delete-attachment" aria-label="Close"></button>
-                          </span>
-                          
+                      <div class="mb-3 d-flex">
+                        <div>
+                          <span class="form-label">Arquivos</span>
+                          <div class="d-flex flex-wrap gap-2">
+                            <span
+                              class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center"
+                            >
+                              <span>print.png</span>
+                              <button
+                                type="button"
+                                class="btn-close btn-delete-attachment"
+                                aria-label="Close"
+                              ></button>
+                            </span>
+                            <span
+                              class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center"
+                            >
+                              <span>print.png</span>
+                              <button
+                                type="button"
+                                class="btn-close btn-delete-attachment"
+                                aria-label="Close"
+                              ></button>
+                            </span>
+                            <span
+                              class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center"
+                            >
+                              <span>print.png</span>
+                              <button
+                                type="button"
+                                class="btn-close btn-delete-attachment"
+                                aria-label="Close"
+                              ></button>
+                            </span>
+                          </div>
                         </div>
                       </div>
 
                       <!-- Botões -->
                       <div class="d-flex justify-content-between">
                         <div class="d-flex">
-                          <label for="file-upload" class="btn btn-secondary d-flex gap-2 p-2 me-3 border-0">
-                            <span class="material-symbols-outlined fs-4">upload</span>
+                          <label
+                            for="file-upload"
+                            class="btn btn-secondary d-flex gap-2 p-2 me-3 border-0"
+                          >
+                            <span class="material-symbols-outlined fs-4"
+                              >upload</span
+                            >
                             Anexar Arquivo
                           </label>
                           <input id="file-upload" type="file" hidden />
 
-                          <label for="audio-upload" class="btn btn-transcrever d-flex align-i gap-2 p-2 me-3 border-0">
-                            <svg fill="currentColor" fill-rule="evenodd" height="1.3em" style="flex:none;line-height:1" viewBox="0 0 24 24" width="1.3em" xmlns="http://www.w3.org/2000/svg">
+                          <label
+                            for="audio-upload"
+                            class="btn btn-transcrever d-flex align-i gap-2 p-2 me-3 border-0"
+                          >
+                            <svg
+                              fill="currentColor"
+                              fill-rule="evenodd"
+                              height="1.3em"
+                              style="flex: none; line-height: 1"
+                              viewBox="0 0 24 24"
+                              width="1.3em"
+                              xmlns="http://www.w3.org/2000/svg"
+                            >
                               <title>Gemini</title>
-                              <path d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z"></path>
+                              <path
+                                d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z"
+                              ></path>
                             </svg>
                             Transcrever Audio
                           </label>
                           <input id="audio-upload" type="file" hidden />
                         </div>
                         <div class="d-flex flex-row align-items-center gap-3">
-                          <div class="form-check form-switch">
-                            <input class="form-check-input input-group-lg" type="checkbox" role="switch" id="switchCheckDefault">
-                            <label class="form-check-label" for="switchCheckDefault">Ação interna</label>
+                          <div class="ms-auto align-self-end">
+                            <select class="form-select">
+                              <option>Aberto</option>
+                              <option>Resolvido</option>
+                              <option>Cancelado</option>
+                            </select>
                           </div>
-                          <button class="btn btn-primary p-2 border-0 m-0 ms-auto" type="submit">Adicionar Ação</button>
+                          <button
+                            class="btn btn-primary p-2 border-0 m-0 ms-auto"
+                            type="submit"
+                          >
+                            Adicionar Ação
+                          </button>
                         </div>
                       </div>
                     </form>
                   </div>
                   <h2 class="fs-5 fw-medium">Ações</h2>
                   <div class="card mb-3">
-                    <div class="card-header d-flex justify-content-between card-header-support intern-action">
-                      <span class="fw-medium">Marcelo Guedes <span>em 11/09/2025 às 13:20</span></span>
+                    <div
+                      class="card-header d-flex justify-content-between card-header-support intern-action"
+                    >
+                      <span class="fw-medium"
+                        >Marcelo Guedes
+                        <span>em 11/09/2025 às 13:20</span></span
+                      >
                       <span class="fw-medium">Ação 05 - Interna</span>
                     </div>
                     <div class="card-body">
                       <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel sapien ac metus finibus tincidunt. Vivamus a diam nec ipsum facilisis tempus. Suspendisse at semper justo, vitae ultricies arcu.
-                        <br>
-                        <br>
-                        Integer ut felis non libero dictum fermentum. Proin at nunc in neque laoreet sodales. Aenean ac lacus vel lectus suscipit porta. Donec consequat, mauris eget porttitor elementum, neque massa porta lorem, a ultrices sapien ligula nec orci.
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent vel sapien ac metus finibus tincidunt. Vivamus
+                        a diam nec ipsum facilisis tempus. Suspendisse at semper
+                        justo, vitae ultricies arcu.
+                        <br />
+                        <br />
+                        Integer ut felis non libero dictum fermentum. Proin at
+                        nunc in neque laoreet sodales. Aenean ac lacus vel
+                        lectus suscipit porta. Donec consequat, mauris eget
+                        porttitor elementum, neque massa porta lorem, a ultrices
+                        sapien ligula nec orci.
                       </p>
+                    </div>
+                    <div class="card-footer d-flex">
+                      <div class="d-flex flex-wrap gap-2">
+                        <span
+                          class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center"
+                        >
+                          <span class="material-symbols-outlined fs-5 w-100">draft</span>
+                          <span>audio.mp3</span>
+                        </span>
+                      </div>
+                      <div class="ms-auto">
+                        <button
+                          class="btn btn-transcrever d-flex gap-2 border-0 d-flex align-items-center"
+                        >
+                          <svg
+                            fill="currentColor"
+                            fill-rule="evenodd"
+                            height="1.3em"
+                            style="flex: none; line-height: 1"
+                            viewBox="0 0 24 24"
+                            width="1.3em"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <title>Gemini</title>
+                            <path
+                              d="M20.616 10.835a14.147 14.147 0 01-4.45-3.001 14.111 14.111 0 01-3.678-6.452.503.503 0 00-.975 0 14.134 14.134 0 01-3.679 6.452 14.155 14.155 0 01-4.45 3.001c-.65.28-1.318.505-2.002.678a.502.502 0 000 .975c.684.172 1.35.397 2.002.677a14.147 14.147 0 014.45 3.001 14.112 14.112 0 013.679 6.453.502.502 0 00.975 0c.172-.685.397-1.351.677-2.003a14.145 14.145 0 013.001-4.45 14.113 14.113 0 016.453-3.678.503.503 0 000-.975 13.245 13.245 0 01-2.003-.678z"
+                            ></path>
+                          </svg>
+                          Gerar Ação com IA
+                        </button>
+                      </div>
                     </div>
                   </div>
                   <div class="card mb-3">
-                    <div class="card-header d-flex justify-content-between card-header-support">
-                      <span class="fw-medium">Marcelo Guedes <span>em 06/09/2025 às 13:20</span></span>
+                    <div
+                      class="card-header d-flex justify-content-between card-header-support"
+                    >
+                      <span class="fw-medium"
+                        >Marcelo Guedes
+                        <span>em 06/09/2025 às 13:20</span></span
+                      >
                       <span class="fw-medium">Ação 04</span>
                     </div>
                     <div class="card-body">
                       <p class="card-text">
                         Bom dia, Marcia!
-                        <br>
-                        <br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel sapien ac metus finibus tincidunt. Vivamus a diam nec ipsum facilisis tempus. Suspendisse at semper justo, vitae ultricies arcu.
-                        <br>
-                        <br>
-                        Integer ut felis non libero dictum fermentum. Proin at nunc in neque laoreet sodales. Aenean ac lacus vel lectus suscipit porta. Donec consequat, mauris eget porttitor elementum, neque massa porta lorem, a ultrices sapien ligula nec orci.
-                        <br>
-                        <br>
-                        Curabitur vel efficitur elit. In ut mi ut mauris eleifend porttitor non id purus. Quisque pharetra sem sed risus vulputate, ut tincidunt nibh ultricies. Vestibulum sodales sapien non augue consequat, sit amet interdum magna malesuada.
-                        <br>
-                        <br>
-                        Sed euismod, magna nec aliquam euismod, nunc velit sollicitudin ex, vel interdum felis risus vitae ex.
-                        <br>
-                        <br>
+                        <br />
+                        <br />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent vel sapien ac metus finibus tincidunt. Vivamus
+                        a diam nec ipsum facilisis tempus. Suspendisse at semper
+                        justo, vitae ultricies arcu.
+                        <br />
+                        <br />
+                        Integer ut felis non libero dictum fermentum. Proin at
+                        nunc in neque laoreet sodales. Aenean ac lacus vel
+                        lectus suscipit porta. Donec consequat, mauris eget
+                        porttitor elementum, neque massa porta lorem, a ultrices
+                        sapien ligula nec orci.
+                        <br />
+                        <br />
+                        Curabitur vel efficitur elit. In ut mi ut mauris
+                        eleifend porttitor non id purus. Quisque pharetra sem
+                        sed risus vulputate, ut tincidunt nibh ultricies.
+                        Vestibulum sodales sapien non augue consequat, sit amet
+                        interdum magna malesuada.
+                        <br />
+                        <br />
+                        Sed euismod, magna nec aliquam euismod, nunc velit
+                        sollicitudin ex, vel interdum felis risus vitae ex.
+                        <br />
+                        <br />
                         Atenciosamente,
-                        <br>
+                        <br />
                         Marcelo Guedes
                       </p>
                     </div>
                     <div class="card-footer">
-                      <ul class="list-unstyled d-flex gap-2 c mt-2 mb-2 attachments">
-                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
-                          <div class="d-flex align-items-center">
-                            <span class="material-symbols-outlined fs-5 w-100">draft</span>
-                            <span>print.png</span>
-                          </div>
-
-                        </li>
-                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
-                          <span class="material-symbols-outlined fs-5">draft</span>
-                          print.png
-                        </li>
-                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
-                          <span class="material-symbols-outlined fs-5">draft</span>
-                          print.png
-                        </li>
-                      </ul>
+                      <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center">
+                          <span class="material-symbols-outlined fs-5 w-100">draft</span>
+                          <span>document.pdf</span>
+                        </span>
+                        <span class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center">
+                          <span class="material-symbols-outlined fs-5 w-100">draft</span>
+                          <span>document.pdf</span>
+                        </span>
+                        <span class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center">
+                          <span class="material-symbols-outlined fs-5 w-100">draft</span>
+                          <span>document.pdf</span>
+                        </span>
+                      </div>
                     </div>
                   </div>
                   <div class="card mb-3">
-                    <div class="card-header d-flex justify-content-between card-header-requester">
-                      <span class="fw-medium">Marcia Silva (Você) <span>em 06/09/2025 às 12:00</span></span>
+                    <div
+                      class="card-header d-flex justify-content-between card-header-requester"
+                    >
+                      <span class="fw-medium"
+                        >Marcia Silva (Você)
+                        <span>em 06/09/2025 às 12:00</span></span
+                      >
                       <span class="fw-medium">Ação 03</span>
                     </div>
                     <div class="card-body">
                       <p class="card-text">
                         Bom dia, Marcelo. Estou bem também!
-                        <br>
-                        <br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel sapien ac metus finibus tincidunt. Vivamus a diam nec ipsum facilisis tempus. Suspendisse at semper justo, vitae ultricies arcu.
-                        <br>
-                        <br>
-                        Integer ut felis non libero dictum fermentum. Proin at nunc in neque laoreet sodales. Aenean ac lacus vel lectus suscipit porta. Donec consequat, mauris eget porttitor elementum, neque massa porta lorem, a ultrices sapien ligula nec orci.
-                        <br>
+                        <br />
+                        <br />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent vel sapien ac metus finibus tincidunt. Vivamus
+                        a diam nec ipsum facilisis tempus. Suspendisse at semper
+                        justo, vitae ultricies arcu.
+                        <br />
+                        <br />
+                        Integer ut felis non libero dictum fermentum. Proin at
+                        nunc in neque laoreet sodales. Aenean ac lacus vel
+                        lectus suscipit porta. Donec consequat, mauris eget
+                        porttitor elementum, neque massa porta lorem, a ultrices
+                        sapien ligula nec orci.
+                        <br />
                       </p>
                     </div>
                   </div>
                   <div class="card mb-3">
-                    <div class="card-header d-flex justify-content-between card-header-support">
-                      <span class="fw-medium">Marcelo Guedes <span>em 06/09/2025 às 09:34</span></span>
+                    <div
+                      class="card-header d-flex justify-content-between card-header-support"
+                    >
+                      <span class="fw-medium"
+                        >Marcelo Guedes
+                        <span>em 06/09/2025 às 09:34</span></span
+                      >
                       <span class="fw-medium">Ação 02</span>
                     </div>
                     <div class="card-body">
                       <p class="card-text">
                         Bom dia, Marcia! Estou bem e você?
-                        <br>
-                        <br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel sapien ac metus finibus tincidunt. Vivamus a diam nec ipsum facilisis tempus. Suspendisse at semper justo, vitae ultricies arcu.
-                        <br>
-                        <br>
-                        Integer ut felis non libero dictum fermentum. Proin at nunc in neque laoreet sodales? 
-                        <br>
-                        <br>
+                        <br />
+                        <br />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent vel sapien ac metus finibus tincidunt. Vivamus
+                        a diam nec ipsum facilisis tempus. Suspendisse at semper
+                        justo, vitae ultricies arcu.
+                        <br />
+                        <br />
+                        Integer ut felis non libero dictum fermentum. Proin at
+                        nunc in neque laoreet sodales?
+                        <br />
+                        <br />
                         Atenciosamente,
-                        <br>
+                        <br />
                         Marcelo Guedes
                       </p>
                     </div>
                   </div>
                   <div class="card mb-3">
-                    <div class="card-header d-flex justify-content-between card-header-requester">
-                      <span class="fw-medium">Marcia Silva (Você) <span>em 05/09/2025 às 17:54</span></span>
+                    <div
+                      class="card-header d-flex justify-content-between card-header-requester"
+                    >
+                      <span class="fw-medium"
+                        >Marcia Silva (Você)
+                        <span>em 05/09/2025 às 17:54</span></span
+                      >
                       <span class="fw-medium">Ação 01</span>
                     </div>
                     <div class="card-body">
                       <p class="card-text">
                         Boa tarde, tudo bem?
-                        <br>
-                        <br>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent vel sapien ac metus finibus tincidunt. Vivamus a diam nec ipsum facilisis tempus. Suspendisse at semper justo, vitae ultricies arcu.
+                        <br />
+                        <br />
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Praesent vel sapien ac metus finibus tincidunt. Vivamus
+                        a diam nec ipsum facilisis tempus. Suspendisse at semper
+                        justo, vitae ultricies arcu.
                       </p>
-                      <img src="./images/image.png" alt="image" class="img-fluid">
+                      <img
+                        src="./images/image.png"
+                        alt="image"
+                        class="img-fluid"
+                      />
                     </div>
                     <div class="card-footer">
-                      <ul class="list-unstyled d-flex gap-2 c mt-2 mb-2 attachments">
-                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
-                          <span class="material-symbols-outlined fs-5">draft</span>
-                          EnvioLoteRps.xml
-                        </li>
-                        <li class="border rounded p-1 d-flex align-items-center gap-2 bg-light">
-                          <span class="material-symbols-outlined fs-5">draft</span>
-                          ConsultaLoteRps.xml
-                        </li>
-                      </ul>
+                      <div class="d-flex flex-wrap gap-2">
+                        <span class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center">
+                          <span class="material-symbols-outlined fs-5 w-100">draft</span>
+                          <span>EnvioLoteRps.xml</span>
+                        </span>
+                        <span class="badge bg-light text-dark border d-flex align-itens-center gap-2 align-items-center">
+                          <span class="material-symbols-outlined fs-5 w-100">draft</span>
+                          <span>ConsultaLoteRps.xml</span>
+                        </span>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -620,9 +1083,7 @@
             role="tabpanel"
             aria-labelledby="pills-tk10016-tab"
             tabindex="0"
-          >
-          </div>
-
+          ></div>
         </div>
       </div>
     </main>
