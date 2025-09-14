@@ -56,18 +56,39 @@
     background: var(--space-cadet);
 }
 
+.card-table {
+    background-color: var(--antiflash-white);
+    max-height: calc(100vh - 130px);
+}
+
+.card-tickets-list {
+    height: calc(100vh - 130px);
+}
+
+.accordion-button {
+    background: var(--antiflash-white);
+}
+
+.accordion-button:not(.collapsed) {
+    color: var(--oxford-blue);
+    background-color: var(--antiflash-white);
+}
+
 /* Cards */
-.card-requester, .card-actions, .card-tickets-list {
+.card-requester, .card-actions, .card-tickets-list, .accordion-item {
     border: 1px solid var(--line);
     background: var(--antiflash-white);
     box-shadow: var(--shadow);
-    height: calc(100vh - 70px);
-    overflow: auto;
     
 }
 
+.card-requester, .card-actions{
+    height: calc(100vh - 70px);
+    overflow: auto;
+}
+
 .ticket-info-value {
-    background-color: #eaeaea88;
+    background-color: #eaeaea88 !important;
 }
 
 table,
@@ -83,6 +104,11 @@ td {
     height: 3.7rem;
     vertical-align: middle;
 }
+
+.card-new-action {
+    background-color: #ffffff81;
+}
+
 
 .ql-toolbar.ql-snow {
     padding: .375rem .75rem;

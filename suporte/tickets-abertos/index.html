@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Tickets Fechados</title>
+    <title>Tickets Abertos</title>
 
     <!-- Quil Editor -->
     <link
@@ -183,7 +183,7 @@
                   <div class="accordion-body border-0">
                     <form class="mb-3">
                       <div class="row g-3">
-                        <div class="col-md-2">
+                        <div class="col-md-6 col-lg-2">
                           <label class="form-label">Número do ticket</label>
                           <input
                             type="number"
@@ -192,16 +192,16 @@
                           />
                         </div>
 
-                        <div class="col-md-2">
+                        <div class="col-md-6 col-lg-2">
                           <label class="form-label">Assunto</label>
                           <input
                             type="text"
                             class="form-control"
                             placeholder="Assunto do ticket"
-                        />
-                      </div>
+                          />
+                        </div>
 
-                        <div class="col">
+                        <div class="col-md-6 col-lg-2">
                           <label class="form-label">Solicitante</label>
                           <input
                             type="text"
@@ -210,7 +210,7 @@
                           />
                         </div>
 
-                        <div class="col">
+                        <div class="col-md-6 col-lg-2">
                           <label class="form-label">Empresa</label>
                           <input
                             type="text"
@@ -219,7 +219,7 @@
                           />
                         </div>
 
-                        <div class="col">
+                        <div class="col-md-6 col-lg-2">
                           <label class="form-label">Motivo</label>
                           <select class="form-select">
                             <option>Selecione..</option>
@@ -228,13 +228,30 @@
                           </select>
                         </div>
 
-                        <div class="col">
+                        <div class="col-md-6 col-lg-2">
                           <label class="form-label">Categoria</label>
                           <select class="form-select">
                             <option>Selecione</option>
                             <option>Dúvida</option>
                             <option>Erro do sistema</option>
                           </select>
+                        </div>
+
+                        <div class="col-md-6 col-lg-3">
+                          <label class="form-label">Data de Abertura</label>
+                          <div class="input-group">
+                            <input type="date" class="form-control" aria-label="Data inicial de abertura">
+                            <span class="input-group-text">a</span>
+                            <input type="date" class="form-control" aria-label="Data final de abertura">
+                          </div>
+                        </div>
+                        <div class="col-md-6 col-lg-3">
+                          <label class="form-label">Data de Fechamento</label>
+                          <div class="input-group">
+                            <input type="date" class="form-control" aria-label="Data inicial de fechamento">
+                            <span class="input-group-text">a</span>
+                            <input type="date" class="form-control" aria-label="Data final de fechamento">
+                          </div>
                         </div>
                       </div>
 
@@ -420,10 +437,17 @@
               <div class="col-md-3">
                 <div class="card p-3 card-requester">
                   <div class="border-bottom mb-2">
-                    <h2 class="fw-semibold fs-5">
-                      Ticket
+                    <div class="d-flex justify-content-between align-items-center mb-2">
+                    <h2 class="fw-semibold fs-5 mb-0">
+                      Ticket 
                       <span class="fw-bold" id="ticket-id">#10015</span>
                     </h2>
+                    <button class="btn btn-sm  d-flex align-items-center" title="Apontamentos" data-bs-toggle="modal" data-bs-target="#apointmentsModal">
+                      <span class="material-symbols-outlined fs-3">
+                        calendar_clock
+                      </span>
+                    </button>
+                  </div>
                     <h3 class="fw-medium fs-6">
                       Problema ao gerar o faturamento dos clientes.
                     </h3>
@@ -434,13 +458,6 @@
                   >
                     <p class="fw-medium mb-0">Abertura:</p>
                     <span class="">30/08/2025 - 10:30</span>
-                  </div>
-
-                  <div
-                    class="d-flex justify-content-between align-items-center mb-1"
-                  >
-                    <p class="fw-medium mb-0">Limite 1° Resposta:</p>
-                    <span class="">30/08/2025 - 11:30</span>
                   </div>
 
                   <div
@@ -520,7 +537,56 @@
                 </div>
               </div>
 
-              <!-- Modal -->
+              <!-- Modal - Apontamentos -->
+              <div class="modal fade" id="apointmentsModal" tabindex="-1" aria-labelledby="apointmentsModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-scrollable">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5" id="apointmentsModalLabel">Apontamentos do Ticket</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <div class="container-fluid">
+                        <div class="row mb-3">
+                          <div class="col-md-6">
+                            <p class="mb-1 fw-semibold">Data de Abertura:</p>
+                            <p class="text-muted" id="ticket-open-date">30/08/2025 10:30</p>
+                          </div>
+                        </div>
+
+                        <div class="row mb-3">
+                          <div class="col-md-6">
+                            <p class="mb-1 fw-semibold">Data Limite de Primeira Resposta:</p>
+                            <p class="text-muted" id="ticket-first-response-date">30/08/2025 11:30</p>
+                          </div>
+                          <div class="col-md-6">
+                            <p class="mb-1 fw-semibold">Data de Primeira Resposta:</p>
+                            <p class="text-muted" id="ticket-answered-date">30/09/2025 13:42</p>
+                          </div>
+                        </div>
+
+                        <div class="row mb-3">
+                          <div class="col-md-6">
+                            <p class="mb-1 fw-semibold">Previsão de Solução:</p>
+                            <p class="text-muted" id="ticket-close-date">08/09/2025 10:30</p>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="p-3 bg-light rounded border">
+                              <h6 class="mb-1">Total de Horas Apontadas</h6>
+                              <p class="fs-5 fw-bold text-success" id="ticket-total-hours">12h 45m</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Modal - Infos Solicitante -->
               <div
                 class="modal fade"
                 id="requesterInfosModal"
@@ -710,7 +776,7 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate est mi
               <!-- Card Ticket -->
               <div class="col-md-9">
                 <div class="card p-3 card-actions">
-                  <div class="card p-3 mb-4">
+                  <div class="card p-3 mb-4 ">
                     <div
                       class="d-flex justify-content-between align-items-center mb-1"
                     >
@@ -866,17 +932,27 @@ Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris vulputate est mi
                     </div>
                     <div class="card-body">
                       <p class="card-text">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                        Praesent vel sapien ac metus finibus tincidunt. Vivamus
-                        a diam nec ipsum facilisis tempus. Suspendisse at semper
-                        justo, vitae ultricies arcu.
-                        <br />
-                        <br />
-                        Integer ut felis non libero dictum fermentum. Proin at
-                        nunc in neque laoreet sodales. Aenean ac lacus vel
-                        lectus suscipit porta. Donec consequat, mauris eget
-                        porttitor elementum, neque massa porta lorem, a ultrices
-                        sapien ligula nec orci.
+                        <b>Transcrição:</b>
+                        <br>
+                        <br>
+                        Márcia: Alô, bom dia, Marcelo!
+                        Marcelo: Oi, Márcia, bom dia!
+                        <br>
+                        <br>
+                        Márcia: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation.
+                        Marcelo: Ah, sim, entendi. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                        <br>
+                        <br>  
+                        Márcia: Exatamente. Curabitur pretium tincidunt lacus. Nulla gravida orci a odio.
+                        Marcelo: Certo, concordo. Aenean nec eros. Vestibulum ante ipsum primis in faucibus orci luctus.
+                        <br>
+                        <br>  
+                        Márcia: Também queria confirmar: lorem ipsum dolor sit amet, consectetuer adipiscing elit.
+                        Marcelo: Sim, claro. Aliquam tincidunt mauris eu risus. Vestibulum auctor dapibus neque.
+                        <br>
+                        <br>    
+                        Márcia: Ótimo! Então, combinamos assim: “Lorem ipsum dolor sit amet, sed do eiusmod tempor”.
+                        Marcelo: Perfeito, fechado. “Ut enim ad minim veniam”.
                       </p>
                     </div>
                     <div class="card-footer d-flex">
