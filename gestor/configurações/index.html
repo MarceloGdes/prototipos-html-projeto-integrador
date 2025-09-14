@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Configurações</title>
+
+  <!-- Quil Editor -->
+  <link href="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.snow.css" rel="stylesheet" />
+
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Funnel+Display:wght@300..800&family=Inter:wght@100..900&display=swap"
+    rel="stylesheet" />
+  <!-- Material Icons -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,200,0,0" />
+
+  <link rel="stylesheet" href="../../reset.css" />
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="../../global.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- Nav superior -->
+  <nav class="navbar shadow-sm sticky-top">
+    <div class="container-fluid justify-content-start">
+      <button class="btn d-flex align-items-center gap-2" type="button" data-bs-toggle="offcanvas"
+        data-bs-target="#sidebarMenu" aria-controls="sidebarMenu">
+        <span class="material-symbols-outlined menu-icon">menu</span>
+        <span class="fw-bold logo fs-4">Deskium</span>
+      </button>
+      <ul class="nav nav-pills overflow-x-auto" id="pills-tab" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link nav-link-navbar active" id="pills-tickets-abertos-tab" data-bs-toggle="pill"
+            data-bs-target="#pills-tickets-abertos" type="button" role="tab" aria-controls="pills-tickets-abertos"
+            aria-selected="true">
+            Configurações
+          </button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Nav dinamica lateral -->
+  <div class="offcanvas offcanvas-start p-3 d-flex flex-column w-25" tabindex="-1" id="sidebarMenu">
+    <div class="d-flex align-items-center mb-4">
+      <span class="logo mt-3">Deskium</span>
+    </div>
+
+    <nav class="nav d-flex flex-column gap-3 flex-grow-1">
+      <ul class="navbar-nav justify-content-end gap-3">
+        <li class="nav-item">
+          <button class="btn d-flex align-items-center gap-2 w-100">
+            <span class="material-symbols-outlined">all_inbox</span>
+            <span>Todos os tickets</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn d-flex align-items-center gap-2 w-100">
+            <span class="material-symbols-outlined">analytics</span>
+            <span>Métricas</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn active d-flex align-items-center gap-2 w-100">
+            <span class="material-symbols-outlined">settings</span>
+            <span>Configurações</span>
+          </button>
+        </li>
+        <li class="nav-item">
+          <button class="btn   d-flex align-items-center gap-2 w-100">
+            <span class="material-symbols-outlined">group</span>
+            <span>Pessoas</span>
+          </button>
+        </li>
+      </ul>
+
+      <button class="btn mt-auto d-flex align-items-center gap-2">
+        <span class="material-symbols-outlined">logout</span>
+        <span>Sair</span>
+      </button>
+    </nav>
+  </div>
+
+  <!-- Conteúdo principal -->
+  <main class="main pt-2">
+    <!-- Sempre ocupa a maior largura do elemento pai -->
+    <div class="container-fluid">
+      <div class="tab-content" id="pills-tabContent">
+        <div class="tab-pane fade show active" id="pills-tickets-abertos" role="tabpanel"
+          aria-labelledby="pills-tickets-abertos-tab" tabindex="0">
+          <div class="card border-0 pt-3 p-4 card-config-list">
+            <ul class="nav nav-tabs mb-3" id="config-tab" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link nav-link-config-pane active" id="motivos-tab" data-bs-toggle="tab" data-bs-target="#motivos-pane"
+                  type="button" role="tab" aria-controls="motivos-pane" aria-selected="true">
+                  Motivos
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link nav-link-config-pane" id="categorias-tab" data-bs-toggle="tab" data-bs-target="#categorias-pane"
+                  type="button" role="tab" aria-controls="categorias-pane" aria-selected="false">
+                  Categorias
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link nav-link-config-pane" id="prioridades-tab" data-bs-toggle="tab" data-bs-target="#prioridades-pane"
+                  type="button" role="tab" aria-controls="prioridades-pane" aria-selected="false">
+                  Prioridades
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link nav-link-config-pane" id="prazos-tab" data-bs-toggle="tab" data-bs-target="#jornada-pane"
+                  type="button" role="tab" aria-controls="jornada-pane" aria-selected="false">
+                  Jornada de Trabalho
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link nav-link-config-pane" id="encerramento-tab" data-bs-toggle="tab" data-bs-target="#encerramento-pane"
+                  type="button" role="tab" aria-controls="encerramento-pane" aria-selected="false">
+                  Encerramento Automático
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link nav-link-config-pane" id="smtp-tab" data-bs-toggle="tab" data-bs-target="#smtp-pane" type="button"
+                  role="tab" aria-controls="smtp-pane" aria-selected="false">
+                  Configurações E-mail (SMTP)
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content pe-2 ps-2" id="config-tabContent">
+              <!-- Motivos -->
+              <div class="tab-pane fade show active" id="motivos-pane" role="tabpanel" aria-labelledby="motivos-tab">
+                <div class="card border-0 card-table">
+                  <div class="table-responsive">
+                    <table class="table align-middle table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Motivo</th>
+                          <th>Prazo de Primeira Resposta (em horas)</th>
+                          <th>Prazo de Resolução (em horas)</th>
+                          <th class="text-center">Ações</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Emissão de NFS-e</td>
+                          <td>2</td>
+                          <td>12</td>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Envio de E-mail</td>
+                          <td>2</td>
+                          <td>24</td>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <button class="btn btn-success mt-2 w-25" data-bs-toggle="modal" data-bs-target="#addMotivoModal">
+                    Adicionar Motivo
+                  </button>
+                </div>
+              </div>
+
+              <!-- Modal Adicionar Motivo -->
+              <div class="modal fade" id="addMotivoModal" tabindex="-1" aria-labelledby="addMotivoModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addMotivoModalLabel">Adicionar Novo Motivo</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="formAddMotivo">
+                        <div class="mb-3">
+                          <label for="motivoInput" class="form-label">Motivo</label>
+                          <input type="text" class="form-control" id="motivoInput" placeholder="Digite o motivo"
+                            required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="primeiraRespostaInput" class="form-label">Prazo de Primeira Resposta (em
+                            horas)</label>
+                          <input type="number" class="form-control" id="primeiraRespostaInput" placeholder="Ex: 2"
+                            min="1" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="prazoResolucaoInput" class="form-label">Prazo de Resolução (em horas)</label>
+                          <input type="number" class="form-control" id="prazoResolucaoInput" placeholder="Ex: 12"
+                            min="1" required>
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Categorias -->
+              <div class="tab-pane fade" id="categorias-pane" role="tabpanel" aria-labelledby="categorias-tab">
+                <div class="card border-0 card-table">
+                  <div class="table-responsive">
+                    <table class="table align-middle table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Categoria</th>
+                          <th>Decréssimo no Prazo de Primeira Resposta (em horas)</th>
+                          <th>Decréssimo no Prazo de Resolução (em horas)</th>
+                          <th class="text-center">Ações</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Erro no sistema</td>
+                          <td>1</td>
+                          <td>5</td>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Dúvida</td>
+                          <td></td>
+                          <td>2</td>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Solicitação</td>
+                          <td></td>
+                          <td></td>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <button class="btn btn-success mt-2 w-25" data-bs-toggle="modal" data-bs-target="#addCategoriaModal">
+                    Adicionar Categoria
+                  </button>
+                </div>
+              </div>
+
+              <!-- Modal Adicionar Categoria -->
+              <div class="modal fade" id="addCategoriaModal" tabindex="-1" aria-labelledby="addCategoriaModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addCategoriaModalLabel">Adicionar Nova Categoria</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="formAddCategoria">
+                        <div class="mb-3">
+                          <label for="categoriaInput" class="form-label">Categoria</label>
+                          <input type="text" class="form-control" id="categoriaInput" placeholder="Digite a categoria"
+                            required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="primeiraRespostaDecInput" class="form-label">Decréscimo no Prazo de Primeira
+                            Resposta (em horas)</label>
+                          <input type="number" class="form-control" id="primeiraRespostaDecInput" placeholder="Ex: 1"
+                            min="0">
+                        </div>
+                        <div class="mb-3">
+                          <label for="prazoResolucaoDecInput" class="form-label">Decréscimo no Prazo de Resolução (em
+                            horas)</label>
+                          <input type="number" class="form-control" id="prazoResolucaoDecInput" placeholder="Ex: 5"
+                            min="0">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Prioridades -->
+              <div class="tab-pane fade" id="prioridades-pane" role="tabpanel" aria-labelledby="prioridades-tab">
+                <div class="card border-0 card-table">
+                  <div class="table-responsive">
+                    <table class="table align-middle table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Prioridade</th>
+                          <th>Decréssimo no Prazo de Primeira Resposta (em horas)</th>
+                          <th>Decréssimo no Prazo de Resolução (em horas)</th>
+                          <th>Cor</th>
+                          <th class="text-center">Ações</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Baixa</td>
+                          <td></td>
+                          <td></td>
+                          <td>
+                            <input type="color" class="form-control form-control-color" id="colorPicker" value="#198754"
+                              disabled readonly>
+                          </td>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Média</td>
+                          <td>0</td>
+                          <td>2</td>
+                          <td>
+                            <input type="color" class="form-control form-control-color" id="colorPicker" value="#ffc107"
+                              disabled readonly>
+                          </td>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                          </td>
+                        </tr>
+                        <tr>
+                          <td>Alta</td>
+                          <td>1</td>
+                          <td>3</td>
+                          <td>
+                            <input type="color" class="form-control form-control-color" id="colorPicker" value="#dc3545"
+                              disabled readonly>
+                          </td>
+                          <td class="text-center">
+                            <button class="btn btn-sm btn-outline-primary">Editar</button>
+                            <button class="btn btn-sm btn-outline-danger">Excluir</button>
+                          </td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <button class="btn btn-success mt-2 w-25" data-bs-toggle="modal" data-bs-target="#addPrioridadeModal">
+                    Adicionar Prioridade
+                  </button>
+                </div>
+              </div>
+
+              <!-- Modal Adicionar Prioridade -->
+              <div class="modal fade" id="addPrioridadeModal" tabindex="-1" aria-labelledby="addPrioridadeModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="addPrioridadeModalLabel">Adicionar Nova Prioridade</h5>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                    </div>
+                    <div class="modal-body">
+                      <form id="formAddPrioridade">
+                        <div class="mb-3">
+                          <label for="prioridadeInput" class="form-label">Prioridade</label>
+                          <input type="text" class="form-control" id="prioridadeInput"
+                            placeholder="Ex: Alta, Média, Baixa" required>
+                        </div>
+                        <div class="mb-3">
+                          <label for="primeiraRespostaDecInput" class="form-label">Decréscimo no Prazo de Primeira
+                            Resposta (em horas)</label>
+                          <input type="number" class="form-control" id="primeiraRespostaDecInput" placeholder="Ex: 1"
+                            min="0">
+                        </div>
+                        <div class="mb-3">
+                          <label for="prazoResolucaoDecInput" class="form-label">Decréscimo no Prazo de Resolução (em
+                            horas)</label>
+                          <input type="number" class="form-control" id="prazoResolucaoDecInput" placeholder="Ex: 3"
+                            min="0">
+                        </div>
+                        <div class="mb-3">
+                          <label for="corPrioridadeInput" class="form-label">Cor da Prioridade</label>
+                          <input type="color" class="form-control form-control-color" id="corPrioridadeInput"
+                            value="#198754">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                      <button type="submit" class="btn btn-primary" form="formAddPrioridade">Salvar</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Jornada -->
+              <div class="tab-pane fade" id="jornada-pane" role="tabpanel" aria-labelledby="jornada-tab">
+                <form class="row g-3">
+                  <!-- Tabela de dias da semana -->
+                  <div class="col-12">
+                    <table class="table table-bordered align-middle">
+                      <thead>
+                        <tr>
+                          <th>Dia</th>
+                          <th>Expediente</th>
+                          <th>Início</th>
+                          <th>Fim</th>
+                          <th>Início</th>
+                          <th>Fim</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>Segunda-feira</td>
+                          <td><input type="checkbox" class="form-check-input" checked></td>
+                          <td><input type="time" class="form-control" value="08:30"></td>
+                          <td><input type="time" class="form-control" value="12:00"></td>
+                          <td><input type="time" class="form-control" value="13:30"></td>
+                          <td><input type="time" class="form-control" value="18:00"></td>
+                        </tr>
+                        <tr>
+                          <td>Terça-feira</td>
+                          <td><input type="checkbox" class="form-check-input" checked></td>
+                          <td><input type="time" class="form-control" value="08:30"></td>
+                          <td><input type="time" class="form-control" value="12:00"></td>
+                          <td><input type="time" class="form-control" value="13:30"></td>
+                          <td><input type="time" class="form-control" value="18:00"></td>
+                        </tr>
+                        <tr>
+                          <td>Quarta-feira</td>
+                          <td><input type="checkbox" class="form-check-input" checked></td>
+                          <td><input type="time" class="form-control" value="08:30"></td>
+                          <td><input type="time" class="form-control" value="12:00"></td>
+                          <td><input type="time" class="form-control" value="13:30"></td>
+                          <td><input type="time" class="form-control" value="18:00"></td>
+                        </tr>
+                        <tr>
+                          <td>Quinta-feira</td>
+                          <td><input type="checkbox" class="form-check-input" checked></td>
+                          <td><input type="time" class="form-control" value="08:30"></td>
+                          <td><input type="time" class="form-control" value="12:00"></td>
+                          <td><input type="time" class="form-control" value="13:30"></td>
+                          <td><input type="time" class="form-control" value="18:00"></td>
+                        </tr>
+                        <tr>
+                          <td>Sexta-feira</td>
+                          <td><input type="checkbox" class="form-check-input" checked></td>
+                          <td><input type="time" class="form-control" value="08:30"></td>
+                          <td><input type="time" class="form-control" value="12:00"></td>
+                          <td><input type="time" class="form-control" value="13:30"></td>
+                          <td><input type="time" class="form-control" value="18:00"></td>
+                        </tr>
+                        <tr>
+                          <td>Sábado</td>
+                          <td><input type="checkbox" class="form-check-input"></td>
+                          <td><input type="time" class="form-control" value=""></td>
+                          <td><input type="time" class="form-control" value=""></td>
+                          <td><input type="time" class="form-control" value=""></td>
+                          <td><input type="time" class="form-control" value=""></td>
+                        </tr>
+                        <tr>
+                          <td>Domingo</td>
+                          <td><input type="checkbox" class="form-check-input"></td>
+                          <td><input type="time" class="form-control" value=""></td>
+                          <td><input type="time" class="form-control" value=""></td>
+                          <td><input type="time" class="form-control" value=""></td>
+                          <td><input type="time" class="form-control" value=""></td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+
+                  <!-- Botão salvar -->
+                  <div class="col-12">
+                    <button class="btn btn-primary mt-2">Salvar Jornada</button>
+                  </div>
+                </form>
+              </div>
+
+
+              <!-- Encerramento Automático -->
+              <div class="tab-pane fade" id="encerramento-pane" role="tabpanel" aria-labelledby="encerramento-tab">
+                <form class="row g-3">
+                  <div class="col-md-4">
+                    <label class="form-label">Tempo para Encerramento Automático (em dias úteis)</label>
+                    <input type="number" class="form-control" value="2">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Tempo para reabertura de tickets fechados</label>
+                    <input type="number" class="form-control" value="2">
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary mt-2">Salvar</button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- SMTP -->
+              <div class="tab-pane fade" id="smtp-pane" role="tabpanel" aria-labelledby="smtp-tab">
+                <form class="row g-3">
+                  <div class="col-md-4">
+                    <label class="form-label">Servidor SMTP</label>
+                    <input type="text" class="form-control" placeholder="smtp.seuservidor.com">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Porta</label>
+                    <input type="number" class="form-control" placeholder="587">
+                  </div>
+                  <div class="col-md-4">
+                    <label class="form-label">Segurança</label>
+                    <Select class="form-select">
+                      <option>TLS</option>
+                      <option>SSL</option>
+                    </Select>
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Usuário</label>
+                    <input type="text" class="form-control" placeholder="usuario@empresa.com">
+                  </div>
+                  <div class="col-md-6">
+                    <label class="form-label">Senha</label>
+                    <input type="password" class="form-control" placeholder="********">
+                  </div>
+                  <div class="col-12">
+                    <button class="btn btn-primary mt-2">Salvar Configurações</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/quill@2.0.3/dist/quill.js"></script>
+  <script src="index.js"></script>
+</body>
+
+</html>
