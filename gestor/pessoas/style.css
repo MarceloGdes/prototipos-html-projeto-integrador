@@ -66,8 +66,6 @@
 }
 
 /* Cards */
-
-
 .card-table {
     background-color: var(--antiflash-white);
 }
@@ -80,7 +78,7 @@
     overflow: auto;
 }
 
-.nav-link-config-pane.active {
+.nav-link-pessoas-pane.active {
     background-color: var(--antiflash-white) !important;
     color: var(--oxford-blue) !important;
 }
