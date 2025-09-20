@@ -93,7 +93,7 @@
           <li class="nav-item">
             <button class="btn d-flex align-items-center gap-2 w-100">
               <span class="material-symbols-outlined">settings</span>
-              <span>Pessoas</span>
+              <span>Configurações</span>
             </button>
           </li>
           <li class="nav-item">
@@ -259,6 +259,76 @@
                         </tbody>
                       </table>
                     </div>
+                    <button
+                      class="btn btn-success mt-2 w-25"
+                      data-bs-toggle="modal"
+                      data-bs-target="#editarEmpresaModal"
+                    >
+                      Cadastrar Empresa
+                    </button>
+                  </div>
+                </div>
+
+                <!-- Alterar/Cadastrar Solicitante Modal -->
+                <div
+                  class="modal fade"
+                  id="editarEmpresaModal"
+                  tabindex="-1"
+                  aria-labelledby="editarEmpresaModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Alterar Empresa</h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="row g-3">
+                            <div class="col-md-6">
+                              <label class="form-label">Razão Social</label>
+                              <input type="text" class="form-control" required />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">CNPJ</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="00.000.000/0000-00"
+                                required
+                              />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Email</label>
+                              <input type="email" class="form-control" required />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Telefone</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                placeholder="(11) 3333-4444"
+                              />
+                            </div>
+                            <div class="col-12">
+                              <label class="form-label">Observações</label>
+                              <textarea class="form-control" rows="2"></textarea>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">
+                          Cancelar
+                        </button>
+                        <button class="btn btn-primary">Salvar</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
 
@@ -337,9 +407,11 @@
                             <td>marcia.silva@empresax.com</td>
                             <td>(11) 2222-3333</td>
                             <td>(11) 98888-7777</td>
-                            <td>Inside Sistemas LTDA</td>
+                            <td>Empresa X LTDA</td>
                             <td class="text-center">
-                              <button class="btn btn-sm btn-outline-primary">
+                              <button class="btn btn-sm btn-outline-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#editarSolicitanteModal">
                                 Editar
                               </button>
                               <button class="btn btn-sm btn-outline-danger">
@@ -349,6 +421,93 @@
                           </tr>
                         </tbody>
                       </table>
+                    </div>
+                    <button
+                      class="btn btn-success mt-2 w-25"
+                      data-bs-toggle="modal"
+                      data-bs-target="#editarSolicitanteModal"
+                    >
+                      Cadastrar Solicitante
+                    </button>
+                  </div>
+                </div>
+
+                 <!-- Alterar/Cadastrar Solicitante Modal -->
+                <div
+                  class="modal fade"
+                  id="editarSolicitanteModal"
+                  tabindex="-1"
+                  aria-labelledby="editarSolicitanteModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Cadastrar Solicitante</h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                        ></button>
+                      </div>
+                      <div class="modal-body">
+                        <form>
+                          <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                              <label class="form-label">Empresa</label>
+                              <select class="form-select" class="form-control" required>
+                                <option>Selecione</option>
+                                <option>Empresa X LTDA</option>
+                                <option>Empresa Y LTDA</option>
+                              </select>
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Nome Completo</label>
+                              <input type="text" class="form-control" required />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Cargo</label>
+                              <input type="text" class="form-control" required />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Setor</label>
+                              <input type="text" class="form-control" required />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Email</label>
+                              <input type="text" class="form-control" required />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Telefone</label>
+                              <input type="text" class="form-control" required />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Celular</label>
+                              <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-12">
+                              <label class="form-label">Observações</label>
+                              <textarea class="form-control" rows="2"></textarea>
+                            </div>
+                          </div>
+                          <div class="row g-3">
+                            <div class="col-md-6">
+                              <label class="form-label">Senha</label>
+                              <input type="text" class="form-control" />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Confirmar Senha</label>
+                              <input type="text" class="form-control" />
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">
+                          Cancelar
+                        </button>
+                        <button class="btn btn-primary">Salvar</button>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -360,7 +519,7 @@
                   role="tabpanel"
                   aria-labelledby="usuarios-tab"
                 >
-                   <div class="border-bottom p-1 mb-3">
+                  <div class="border-bottom p-1 mb-3">
                     <form class="mb-2">
                       <div class="d-flex align-items-end gap-3 flex-wrap">
                         <div>
@@ -419,7 +578,9 @@
                             <td>marcelo@insidesistemas.com</td>
                             <td>Gestor</td>
                             <td class="text-center">
-                              <button class="btn btn-sm btn-outline-primary">
+                              <button class="btn btn-sm btn-outline-primary"
+                                data-bs-toggle="modal"
+                                data-bs-target="#addUsuarioModal">
                                 Editar
                               </button>
                               <button class="btn btn-sm btn-outline-danger">
@@ -431,7 +592,7 @@
                       </table>
                     </div>
                     <button
-                      class="btn btn-success mt-2 w-25 ms-auto"
+                      class="btn btn-success mt-2 w-25"
                       data-bs-toggle="modal"
                       data-bs-target="#addUsuarioModal"
                     >
@@ -439,71 +600,70 @@
                     </button>
                   </div>
                 </div>
-              </div>
-            </div>
 
-            <!-- Alterar Empresa Modal -->
-            <div
-              class="modal fade"
-              id="editarEmpresaModal"
-              tabindex="-1"
-              aria-labelledby="editarEmpresaModalLabel"
-              aria-hidden="true"
-            >
-              <div class="modal-dialog modal-lg">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h5 class="modal-title">Alterar Empresa</h5>
-                    <button
-                      type="button"
-                      class="btn-close"
-                      data-bs-dismiss="modal"
-                    ></button>
-                  </div>
-                  <div class="modal-body">
-                    <form>
-                      <div class="row g-3">
-                        <div class="col-md-6">
-                          <label class="form-label">Razão Social</label>
-                          <input type="text" class="form-control" required />
-                        </div>
-                        <div class="col-md-6">
-                          <label class="form-label">CNPJ</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="00.000.000/0000-00"
-                            required
-                          />
-                        </div>
-                        <div class="col-md-6">
-                          <label class="form-label">Email</label>
-                          <input type="email" class="form-control" required />
-                        </div>
-                        <div class="col-md-6">
-                          <label class="form-label">Telefones</label>
-                          <input
-                            type="text"
-                            class="form-control"
-                            placeholder="(11) 3333-4444"
-                          />
-                        </div>
-                        <div class="col-12">
-                          <label class="form-label">Observações</label>
-                          <textarea class="form-control" rows="2"></textarea>
-                        </div>
+                 <!-- Alterar/Cadastrar Usuario Modal -->
+                <div
+                  class="modal fade"
+                  id="addUsuarioModal"
+                  tabindex="-1"
+                  aria-labelledby="addUsuarioModalLabel"
+                  aria-hidden="true"
+                >
+                  <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title">Cadastrar Usuario</h5>
+                        <button
+                          type="button"
+                          class="btn-close"
+                          data-bs-dismiss="modal"
+                        ></button>
                       </div>
-                    </form>
-                  </div>
-                  <div class="modal-footer">
-                    <button class="btn btn-secondary" data-bs-dismiss="modal">
-                      Cancelar
-                    </button>
-                    <button class="btn btn-primary">Salvar</button>
+                      <div class="modal-body">
+                        <form>
+                          <div class="row g-3 mb-3">
+                            <div class="col-md-6">
+                              <label class="form-label">Nome Completo</label>
+                              <input type="text" class="form-control" required />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Perfil</label>
+                              <select class="form-select" class="form-control" required>
+                                <option>Gestor</option>
+                                <option>Analista</option>
+                              </select>
+                            </div>
+                            <div class="col-md-12">
+                              <label class="form-label">Email</label>
+                              <input type="text" class="form-control" required />
+                            </div>
+                            
+                          </div>
+                          <div class="row g-3">
+                            <div class="col-md-6">
+                              <label class="form-label">Senha</label>
+                              <input type="password" class="form-control" required />
+                            </div>
+                            <div class="col-md-6">
+                              <label class="form-label">Confirmar Senha</label>
+                              <input type="password" class="form-control" required/>
+                            </div>
+                          </div>
+                        </form>
+                      </div>
+                      <div class="modal-footer">
+                        <button class="btn btn-secondary" data-bs-dismiss="modal">
+                          Cancelar
+                        </button>
+                        <button class="btn btn-primary">Salvar</button>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
+
+            
           </div>
         </div>
       </div>
