@@ -1,0 +1,93 @@
+:root {
+    --bs-form-switch-bg: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.75%29'/%3e%3c/svg%3e) !important;
+}
+
+.navbar {
+    background-color: var(--space-cadet);
+}
+
+.menu-icon {
+    color: var(--antiflash-white);
+}
+
+.logo {
+    font-family: "Funnel Display", sans-serif;
+    color: var(--antiflash-white);
+}
+
+.nav-link-navbar.active {
+    background-color: var(--oxford-blue) !important;
+    color: var(--antiflash-white);
+}
+
+.nav-link-navbar {
+    color: var(--antiflash-white);
+}
+
+.nav-link-navbar:hover {
+    color: var(--verdigris);
+}
+
+.btn-tab-close {
+    font-size: 0.6em;
+}
+
+
+/* Sidebar */
+.offcanvas {
+    background: var(--oxford-blue);
+    color: var(--antiflash-white);
+}
+
+.offcanvas .logo {
+    font-weight: 800;
+    font-size: 1.7rem;
+}
+
+.offcanvas .btn {
+    text-align: left;
+    color: var(--antiflash-white);
+    border: none;
+}
+
+.offcanvas .btn:hover {
+    background: var(--space-cadet);
+    transition: background 0.5s;
+}
+
+.offcanvas .btn.active {
+    background: var(--space-cadet);
+}
+
+.card-metrics-bg {
+    height: calc(100vh - 70px);
+    overflow: auto;
+}
+
+/* Cards */
+.card-metrics, .card-metrics-bg, .card-charts{
+    border: 1px solid var(--line);
+    background: var(--antiflash-white);
+    box-shadow: var(--shadow);
+   
+}
+
+.card-metrics {
+    color: var(--space-cadet);
+}
+
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
+}
+
+.btn-primary {
+    background-color: #318fe7;
+    color: var(--antiflash-white);
+}
