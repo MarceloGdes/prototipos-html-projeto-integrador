@@ -11,6 +11,9 @@ const ticketsResolvidosDentroForaPrazo = document.getElementById(
 
 const ticketsAbertosPorEmpres = document.getElementById('ticketsAbertosPorEmpres');
 
+const qtdTicketsPorMotivo = document.getElementById('qtdTicketsPorMotivo');
+
+
 new Chart(ticketsDentroForaPrazoPrimeiraResposta, {
   type: "pie",
   data: {
@@ -31,6 +34,7 @@ new Chart(ticketsDentroForaPrazoPrimeiraResposta, {
     },
   },
 });
+
 
 new Chart(ticketsResolvidosDentroForaPrazo, {
   type: "pie",

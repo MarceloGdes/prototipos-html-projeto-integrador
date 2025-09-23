@@ -40,10 +40,17 @@ body, html {
   padding: 0.75rem;
   transition: background 0.3s ease;
   font-size: 1.1rem;
+  border-color: var(--oxford-blue);
 }
 
-.btn-login:hover {
+.btn-modal {
+  background-color: var(--oxford-blue);
+  color: var(--antiflash-white);
+}
+
+.btn-login:hover, .btn-modal:hover {
   background-color: var(--space-cadet);
+  border-color: var(--space-cadet);
   color: var(--antiflash-white);
 }
 

@@ -28,12 +28,13 @@
   <div class="container-fluid h-100">
     <div class="row h-100 pe-0">
       <div class="col-lg-7 col-xl-8 d-md-flex align-items-center justify-content-center">
-        <img src="assets/undraw_group-chat_4xw0.svg" alt="Ilustração" class="img-fluid" style="width: 80%;" />
+        <img src="assets/undraw_group-chat_4xw0.svg" alt="Ilustração" style="max-width: 80%;" />
       </div>
 
       <!-- Coluna direita com login -->
       <div class="col-md-5 col-lg-5 col-xl-4 d-flex align-items-center justify-content-center p-0">
-        <div class="login-card rounded-4 h-100 w-100 d-flex flex-column justify-content-center align-items-center p-5 w-100">
+        <div
+          class="login-card rounded-4 h-100 w-100 d-flex flex-column justify-content-center align-items-center p-5 w-100">
           <div class="mb-4">
             <h1 class="fs-1 mb-2">Deskium</h1>
             <h4 class="fw-bold text-center mb-1">Bem-vindo de volta</h4>
@@ -57,16 +58,84 @@
               <input type="password" class="form-control" id="senha" placeholder="••••••••" />
             </div>
             <button type="submit" class="btn btn-login w-100 fw-semibold">Entrar</button>
+            <div class="text-center mt-3">
+              <a href="#" data-bs-toggle="modal" data-bs-target="#modalRecuperacao">Esqueci minha senha</a>
             </div>
           </form>
         </div>
       </div>
     </div>
-  </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+    <!-- Modal de Recuperação de Senha -->
+    <div class="modal fade" id="modalRecuperacao" aria-hidden="true" aria-labelledby="modalRecuperacaoLabel"
+      tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalRecuperacaoLabel">Recuperação de Senha</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-3">Digite seu e-mail para receber o código de recuperação:</p>
+            <input type="email" class="form-control mb-3" placeholder="seuemail@exemplo.com">
+            <button class="btn btn-modal w-100" data-bs-target="#modalRecuperacao2" data-bs-toggle="modal">Enviar
+              e-mail</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalRecuperacao2" aria-hidden="true" aria-labelledby="modalRecuperacaoLabel2"
+      tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalRecuperacaoLabel2">Recuperação de Senha</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-3">Digite o código de 6 dígitos enviado para seu e-mail:</p>
+            <input type="text" class="form-control mb-3 text-center" maxlength="6">
+            <div class="d-flex gap-3 justify-content align-items-center">
+              <button class="btn btn-secondary w-50" data-bs-target="#modalRecuperacao"
+                data-bs-toggle="modal">Voltar</button>
+              <button class="btn btn-modal w-50" data-bs-target="#modalRecuperacao3" data-bs-toggle="modal">Confirmar
+                código</button>
+            </div>
+          </div>
+          <div class="modal-footer">
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalRecuperacao3" aria-hidden="true" aria-labelledby="modalRecuperacaoLabel3"
+      tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="modalRecuperacaoLabel3">Recuperação de Senha</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="mb-3">Digite sua nova senha:</p>
+            <input type="password" class="form-control mb-3" placeholder="Nova senha">
+            <input type="password" class="form-control mb-3" placeholder="Confirmar nova senha">
+            <button class="btn btn-modal w-100">Trocar senha</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+      crossorigin="anonymous"></script>
+
+    <script>
+      function nextStep(step) {
+        document.querySelectorAll('#modalRecuperacao .modal-body > div')
+          .forEach(el => el.classList.add('d-none'));
+        document.getElementById('step' + step).classList.remove('d-none');
+      }
+    </script>
 </body>
 
 </html>
