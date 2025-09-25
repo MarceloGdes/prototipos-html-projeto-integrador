@@ -54,5 +54,18 @@ body, html {
   color: var(--antiflash-white);
 }
 
+@media (max-width: 992px){
+  .col-ilustracao {
+    display: none;
+  }
+
+  .login-card {
+    border-radius: 0 !important;
+
+    padding: 1;
+  }
+}
+
+
 
 

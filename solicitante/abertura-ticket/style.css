@@ -94,7 +94,7 @@
     border-top: none;
     border-top-right-radius: 0;
     border-top-left-radius: 0;
-    height: 10em;
+    height: 10em
 }
 
 .btn-primary {
@@ -104,4 +104,28 @@
 
 .btn-secondary {
     border: none;
+}
+
+@media (min-width: 1441px) {
+    html,body{
+        font-size: 16px;
+    }
+
+    .card {
+        height: calc(100vh - 90px);
+    }
+
+    #editor {
+        height: calc(10em + 0.15 * 100vh)
+    }
+}
+
+@media (min-width: 2500px) {
+    html,body{
+        font-size: 22px;
+    }
+
+    .card {
+        height: calc(100vh - 105px);
+    }
 }
